@@ -55,6 +55,20 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
             {project.subtitle}
           </p>
 
+          {project.behanceUrl && (
+            <div className="pt-2">
+              <a
+                href={project.behanceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-neutral-200 transition-colors shadow-lg"
+              >
+                <span>View Full Showcase on Behance</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          )}
+
           {/* Metadata Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-white/10 text-xs font-mono uppercase tracking-wider">
             <div>
@@ -89,33 +103,48 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className={`mt-16 w-full h-[400px] sm:h-[550px] rounded-3xl bg-gradient-to-br ${project.heroGradient} border border-white/10 p-8 flex flex-col justify-between relative overflow-hidden shadow-2xl`}
+          className={`mt-16 w-full rounded-3xl bg-[#0A0A0C] border border-white/10 overflow-hidden shadow-2xl relative ${
+            project.slug === 'furniture-store' ? 'min-h-[500px] md:min-h-[700px] flex items-center justify-center p-4 sm:p-8' : 'h-[400px] sm:h-[550px] p-8 flex flex-col justify-between'
+          }`}
         >
-          <div className="flex justify-between items-start z-10">
-            <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
-              Interactive Case Study Visualizer
-            </span>
-            <span className="text-xs font-mono text-neutral-400 uppercase">
-              {project.year} Release
-            </span>
-          </div>
-
-          <div className="z-10 max-w-2xl mx-auto w-full bg-neutral-950/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-8 shadow-2xl space-y-4">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <span className="text-sm font-bold tracking-tight uppercase text-white">
-                {project.title} — Primary Workspace Interface
-              </span>
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+          {project.slug === 'furniture-store' ? (
+            <div className="w-full h-full flex flex-col items-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/furniture-store-banner.png"
+                alt="Full Behance UI/UX Case Study Presentation Banner"
+                className="w-full h-auto object-contain rounded-2xl border border-white/10 shadow-2xl"
+              />
             </div>
-            <p className="text-xs text-neutral-300 font-mono leading-relaxed">
-              {project.summary}
-            </p>
-          </div>
+          ) : (
+            <>
+              <div className="flex justify-between items-start z-10">
+                <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                  Interactive Case Study Visualizer
+                </span>
+                <span className="text-xs font-mono text-neutral-400 uppercase">
+                  {project.year} Release
+                </span>
+              </div>
 
-          <div className="z-10 flex justify-between items-end text-xs font-mono text-neutral-400 uppercase tracking-widest">
-            <span>Scroll for detailed research & architecture</span>
-            <span className="text-emerald-400">Design System Verified ✓</span>
-          </div>
+              <div className="z-10 max-w-2xl mx-auto w-full bg-neutral-950/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-8 shadow-2xl space-y-4">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <span className="text-sm font-bold tracking-tight uppercase text-white">
+                    {project.title} — Primary Workspace Interface
+                  </span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                </div>
+                <p className="text-xs text-neutral-300 font-mono leading-relaxed">
+                  {project.summary}
+                </p>
+              </div>
+
+              <div className="z-10 flex justify-between items-end text-xs font-mono text-neutral-400 uppercase tracking-widest">
+                <span>Scroll for detailed research & architecture</span>
+                <span className="text-emerald-400">Design System Verified ✓</span>
+              </div>
+            </>
+          )}
         </motion.div>
       </section>
 

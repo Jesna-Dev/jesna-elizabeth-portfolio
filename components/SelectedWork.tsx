@@ -47,9 +47,14 @@ function ProjectCard({ project }: { project: Project }) {
     setMousePos({ x: x * 0.1, y: y * 0.1 });
   };
 
+  const targetUrl = project.behanceUrl || `/work/${project.slug}`;
+  const isExternal = Boolean(project.behanceUrl);
+
   return (
-    <Link
-      href={`/work/${project.slug}`}
+    <a
+      href={targetUrl}
+      target={isExternal ? '_blank' : '_self'}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
@@ -115,44 +120,58 @@ function ProjectCard({ project }: { project: Project }) {
               </span>
             </div>
 
-            {/* Procedural UI Mockup Component */}
-            <div className="z-10 bg-neutral-950/80 backdrop-blur-xl border border-white/15 rounded-xl p-6 shadow-2xl space-y-4 max-w-lg mx-auto w-full group-hover:border-white/30 transition-colors">
-              <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                <div className="flex gap-2">
-                  <span className="w-3 h-3 rounded-full bg-red-500/60" />
-                  <span className="w-3 h-3 rounded-full bg-amber-500/60" />
-                  <span className="w-3 h-3 rounded-full bg-emerald-500/60" />
-                </div>
-                <span className="text-[10px] font-mono text-neutral-400 uppercase">
-                  {project.slug}.ui
-                </span>
-              </div>
-              <div className="space-y-2">
-                <div
-                  className="h-4 rounded bg-white/20 w-3/4 animate-pulse"
-                  style={{ backgroundColor: project.accentColor }}
+            {project.slug === 'furniture-store' ? (
+              <div className="absolute inset-0 z-0 bg-[#0A0A0C] flex items-center justify-center p-2 sm:p-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/furniture-store.png"
+                  alt="Furniture & Tiles Store UI/UX Showcase"
+                  className="w-full h-full object-contain group-hover:scale-102 transition-transform duration-700 rounded-xl"
                 />
-                <div className="h-3 rounded bg-white/10 w-full" />
-                <div className="h-3 rounded bg-white/10 w-5/6" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
               </div>
-              <div className="grid grid-cols-3 gap-2 pt-2">
-                <div className="h-12 rounded bg-white/5 border border-white/10" />
-                <div className="h-12 rounded bg-white/5 border border-white/10" />
-                <div className="h-12 rounded bg-white/5 border border-white/10" />
+            ) : null}
+
+            {/* Procedural UI Mockup Component */}
+            {project.slug !== 'furniture-store' && (
+              <div className="z-10 bg-neutral-950/80 backdrop-blur-xl border border-white/15 rounded-xl p-6 shadow-2xl space-y-4 max-w-lg mx-auto w-full group-hover:border-white/30 transition-colors">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                  <div className="flex gap-2">
+                    <span className="w-3 h-3 rounded-full bg-red-500/60" />
+                    <span className="w-3 h-3 rounded-full bg-amber-500/60" />
+                    <span className="w-3 h-3 rounded-full bg-emerald-500/60" />
+                  </div>
+                  <span className="text-[10px] font-mono text-neutral-400 uppercase">
+                    {project.slug}.ui
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <div
+                    className="h-4 rounded bg-white/20 w-3/4 animate-pulse"
+                    style={{ backgroundColor: project.accentColor }}
+                  />
+                  <div className="h-3 rounded bg-white/10 w-full" />
+                  <div className="h-3 rounded bg-white/10 w-5/6" />
+                </div>
+                <div className="grid grid-cols-3 gap-2 pt-2">
+                  <div className="h-12 rounded bg-white/5 border border-white/10" />
+                  <div className="h-12 rounded bg-white/5 border border-white/10" />
+                  <div className="h-12 rounded bg-white/5 border border-white/10" />
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="flex justify-between items-end z-10">
               <span className="text-xs font-mono text-neutral-400">
                 {project.duration} Engagement
               </span>
               <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 flex items-center gap-1">
-                Explore Case Study →
+                {isExternal ? 'View on Behance ↗' : 'Explore Case Study →'}
               </span>
             </div>
           </motion.div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

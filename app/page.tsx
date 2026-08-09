@@ -24,8 +24,8 @@ export default function Home() {
     <main className="min-h-screen bg-neutral-950 text-white selection:bg-white selection:text-black">
       <Navbar />
       <Hero />
-      <Introduction />
       <Marquee />
+      <Introduction />
       <SelectedWork />
       <Playground />
       <WebDesign />

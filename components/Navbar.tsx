@@ -25,12 +25,12 @@ export default function Navbar() {
           {/* Left Brand Area */}
           <Magnetic>
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20 group-hover:border-white/50 transition-colors">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-red-500/30 group-hover:border-red-500/70 transition-colors bg-black flex items-center justify-center">
                 <Image
-                  src="/jesna-avatar.png"
-                  alt="Jesna Elizabeth Jolly Profile Avatar"
+                  src="/ek-logo.png"
+                  alt="Jesna Elizabeth Jolly EK Logo"
                   fill
-                  className="object-cover"
+                  className="object-contain p-0.5"
                 />
               </div>
               <span className="text-sm font-medium text-[#F5F5F5] tracking-tight group-hover:text-white transition-colors">

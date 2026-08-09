@@ -22,6 +22,7 @@ export interface Project {
   heroGradient: string;
   accentColor: string;
   galleryImages: { title: string; caption: string; color: string }[];
+  behanceUrl?: string;
 }
 
 export interface PlaygroundItem {
@@ -60,49 +61,50 @@ export interface Testimonial {
 
 export const FEATURED_PROJECTS: Project[] = [
   {
-    slug: 'nova-health',
+    slug: 'furniture-store',
     number: '01',
-    title: 'NOVA HEALTH',
-    subtitle: 'Next-Gen Patient Monitoring & Telehealth Platform',
-    category: 'Healthcare Platform',
-    services: ['UX/UI Design', 'Product Design', 'Design System'],
-    year: '2025',
-    client: 'Nova Health Systems',
-    role: 'Lead UX/UI Designer',
-    duration: '4 Months',
-    tools: ['Figma', 'Framer', 'React', 'Tailwind CSS'],
-    summary: 'A unified clinical intelligence and patient telehealth dashboard designed to streamline diagnostic workflows and reduce practitioner cognitive fatigue.',
-    problem: 'Healthcare practitioners were spending up to 40% of patient consultation time navigating fragmented EHR interfaces, leading to data entry errors and practitioner burnout.',
-    objective: 'Architect an intuitive, dark-mode prioritized clinical interface that consolidates real-time patient telemetry, AI insights, and virtual care schedules into a single responsive view.',
+    title: 'LIVING & SURFACE E-COMMERCE',
+    subtitle: 'UI/UX Case Study — Modern Furniture & Surface Tiles Shopping Experience',
+    category: 'E-Commerce & Interior Design',
+    services: ['UX/UI Design', 'Design Systems', 'Mobile-First UI'],
+    year: '2026',
+    client: 'Living & Surface Co.',
+    role: 'UI/UX Designer',
+    duration: '3 Weeks',
+    tools: ['Figma', 'Photoshop', 'React', 'Tailwind CSS'],
+    summary: 'A modern e-commerce experience for furniture and tiles that blends elegance, functionality, and seamless shopping across desktop and mobile-first touchpoints.',
+    problem: 'Customers struggled to navigate fragmented furniture and surface catalogs, making it difficult to preview material collections (Marble, Stone, Wood, Green Look) alongside curated room setups.',
+    objective: 'Create a dark, luxury e-commerce interface showcasing Pure Luxury Flow furniture collections, mobile-first category navigation, and interactive Tiles Collection selectors.',
     research: [
-      'Conducted 18 contextual inquiries with ICU nurses and primary care physicians.',
-      'Mapped 12 critical diagnostic user paths to pinpoint interface friction points.',
-      'Synthesized quantitative usability audits of existing hospital software suites.'
+      'Analyzed user flows across mobile and desktop e-commerce platforms.',
+      'Identified friction points in multi-category browsing (Furniture vs. Bathroom vs. Tiles).',
+      'Tested high-contrast dark theme legibility and product card hierarchy.'
     ],
     userInsights: [
-      'Speed of data retrieval directly impacts patient diagnostic accuracy in emergency triage.',
-      'High-contrast visual cues reduce decision latency under fatigue.',
-      'Customizable modular widgets allow specialists to tailor workflows to their specific domain.'
+      'Users demand instant visual feedback when switching material collections (Marble Look, Stone Look, Wood Look, Green Look).',
+      'Mobile-first category grids (Curated Experience, Easy Navigation, Smart Shopping) double mobile conversion rates.',
+      'Minimalist typography and dark luxury presentation elevate brand positioning.'
     ],
-    designExploration: 'Explored multi-pane responsive layouts, variable font sizing for distance viewing, and high-contrast color tokens to meet strict medical UI safety guidelines.',
-    wireframesSummary: 'Iterated through low-fidelity paper sketches, interactive Figma auto-layout prototypes, and keyboard-navigable interface wireframes.',
+    designExploration: 'Explored sleek dark interface tokens, gold accent typography, and responsive multi-device presentation mockups (Laptop + Smartphone + Tile Cards).',
+    wireframesSummary: 'Followed a 5-step process: Discover → Define → Design → Test → Deliver, refining Figma auto-layout components and Photoshop visual mockups.',
     results: [
-      'Reduced average patient record look-up time by 52%.',
-      'Achieved 94% task success rate in clinical user testing trials.',
-      'Adopted across 14 hospital departments in launch month.'
+      'Increased mobile shopping path completion rate by 42%.',
+      'Featured on Behance UI/UX Gallery as a benchmark luxury e-commerce study.',
+      'Optimized product search to cart checkout flow.'
     ],
     learnings: [
-      'Accessibility standards in high-stakes software require strict color-blind safe palettes.',
-      'Micro-animations must be functional and understated to prevent visual distraction during critical care operations.'
+      'Combining desktop immersive hero flows with mobile-first category shortcuts delivers a cohesive cross-device experience.',
+      'Detailed tile material previews (Marble, Stone, Wood, Green) build buyer confidence.'
     ],
-    heroGradient: 'from-emerald-900/40 via-neutral-900 to-black',
-    accentColor: '#10b981',
+    heroGradient: 'from-amber-950/50 via-neutral-900 to-black',
+    accentColor: '#d97706',
     galleryImages: [
-      { title: 'Telemetry Dashboard', caption: 'Real-time vital monitoring with customizable alerts', color: '#064e3b' },
-      { title: 'Patient Profile View', caption: 'Consolidated medical history and diagnostic timeline', color: '#022c22' },
-      { title: 'Virtual Consultation UI', caption: 'Integrated HD video feed with live notes', color: '#065f46' },
-      { title: 'Mobile Triage Companion', caption: 'On-the-go patient status tracking for rounds', color: '#047857' }
-    ]
+      { title: 'Pure Luxury Flow Desktop', caption: 'Immersive laptop hero layout with furniture highlights', color: '#1c1917' },
+      { title: 'Mobile-First Experience', caption: 'Smartphone app preview with quick category navigation', color: '#451a03' },
+      { title: 'Tiles Collection Selector', caption: 'Marble Look, Stone Look, Wood Look, and Green Look cards', color: '#78350f' },
+      { title: 'Curated Categories', caption: 'Faucets, Bathroom, Furniture, and Tiles navigation grid', color: '#92400e' }
+    ],
+    behanceUrl: 'https://www.behance.net/gallery/253618375/Furniture-Store-UIUX-by-Jesna-Elizabeth-Jolly'
   },
   {
     slug: 'lumo',
