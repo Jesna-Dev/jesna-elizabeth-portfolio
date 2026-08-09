@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: 'Jesna Elizabeth Jolly — UI/UX Designer & Creative Technologist',
   description:
     'Portfolio of Jesna Elizabeth Jolly, a UI/UX Designer, Product Designer, and Creative Technologist based in Kerala, India.',
+  icons: {
+    icon: '/ek-logo.png',
+    shortcut: '/ek-logo.png',
+    apple: '/ek-logo.png',
+  },
 };
 
 export default function RootLayout({

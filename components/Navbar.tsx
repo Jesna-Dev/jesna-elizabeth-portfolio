@@ -25,12 +25,12 @@ export default function Navbar() {
           {/* Left Brand Area */}
           <Magnetic>
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-red-500/30 group-hover:border-red-500/70 transition-colors bg-black flex items-center justify-center">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20 group-hover:border-white/50 transition-colors">
                 <Image
-                  src="/ek-logo.png"
-                  alt="Jesna Elizabeth Jolly EK Logo"
+                  src="/1.png"
+                  alt="Jesna Elizabeth Jolly Profile Picture"
                   fill
-                  className="object-contain p-0.5"
+                  className="object-cover"
                 />
               </div>
               <span className="text-sm font-medium text-[#F5F5F5] tracking-tight group-hover:text-white transition-colors">
@@ -49,7 +49,7 @@ export default function Navbar() {
                 >
                   <span>{link.label}</span>
                   {link.external && (
-                    <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-white transition-colors" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-white transition-colors" />
                   )}
                   <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full" />
                 </a>
@@ -113,7 +113,7 @@ export default function Navbar() {
                 className="py-2 border-b border-white/5 flex items-center justify-between text-neutral-300 hover:text-white"
               >
                 <span>{link.label}</span>
-                {link.external && <ArrowUpRight className="w-4 h-4 text-neutral-500" />}
+                {link.external && <ArrowUpRight className="w-4 h-4 text-neutral-400" />}
               </a>
             ))}
 
