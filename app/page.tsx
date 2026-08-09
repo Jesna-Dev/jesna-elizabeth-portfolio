@@ -5,8 +5,8 @@ import Introduction from '@/components/Introduction';
 import Marquee from '@/components/Marquee';
 import SelectedWork from '@/components/SelectedWork';
 import Playground from '@/components/Playground';
-import WebDesign from '@/components/WebDesign';
 import About from '@/components/About';
+import Experience from '@/components/Experience';
 import Process from '@/components/Process';
 import Skills from '@/components/Skills';
 import Testimonials from '@/components/Testimonials';
@@ -28,8 +28,8 @@ export default function Home() {
       <Introduction />
       <SelectedWork />
       <Playground />
-      <WebDesign />
       <About />
+      <Experience />
       <Process />
       <Skills />
       <Testimonials />

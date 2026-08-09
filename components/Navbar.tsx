@@ -8,9 +8,9 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 import Magnetic from './Magnetic';
 
 const NAV_LINKS = [
-  { label: 'Design', href: '#work' },
   { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Resources', href: '#playground', external: true },
 ];
 
@@ -27,7 +27,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20 group-hover:border-white/50 transition-colors">
                 <Image
-                  src="/1.png"
+                  src="/IMG_3730.PNG"
                   alt="Jesna Elizabeth Jolly Profile Picture"
                   fill
                   className="object-cover"
