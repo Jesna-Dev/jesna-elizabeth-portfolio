@@ -1,141 +1,111 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown, MapPin, Sparkles } from 'lucide-react';
-import Magnetic from './Magnetic';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const TITLES = [
+  'Jesna Elizabeth Jolly',
+  'UI/UX Designer',
+  'Creative Technologist',
+  'Vibe Coder'
+];
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [textIndex, setTextIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+  // Typewriter character-by-character effect with custom timings
+  useEffect(() => {
+    const currentTitle = TITLES[textIndex];
+    let timeout: NodeJS.Timeout;
+
+    if (!isDeleting && displayText.length < currentTitle.length) {
+      // Typing phase: 70-100ms per character
+      timeout = setTimeout(() => {
+        setDisplayText(currentTitle.slice(0, displayText.length + 1));
+      }, 85);
+    } else if (!isDeleting && displayText.length === currentTitle.length) {
+      // Pause briefly after text completes: 1.8 seconds
+      timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, 1800);
+    } else if (isDeleting && displayText.length > 0) {
+      // Deleting phase: 45ms per character
+      timeout = setTimeout(() => {
+        setDisplayText(currentTitle.slice(0, displayText.length - 1));
+      }, 45);
+    } else if (isDeleting && displayText.length === 0) {
+      // Transition phase to next title: 400ms delay
+      setIsDeleting(false);
+      setTextIndex((prev) => (prev + 1) % TITLES.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, textIndex]);
+
+  // Subtle mouse-following glow
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const { innerWidth, innerHeight } = window;
-      const x = (e.clientX - innerWidth / 2) / (innerWidth / 2);
-      const y = (e.clientY - innerHeight / 2) / (innerHeight / 2);
-      setMousePosition({ x, y });
+      setMousePos({ x: e.clientX, y: e.clientY });
     };
-
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between pt-32 pb-12 px-6 md:px-12 overflow-hidden bg-neutral-950 noise-bg">
-      {/* Background Subtle Floating Parallax Layers */}
-      <motion.div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-violet-600/10 via-emerald-500/10 to-transparent rounded-full blur-3xl pointer-events-none"
-        animate={{
-          x: mousePosition.x * 20,
-          y: mousePosition.y * 20,
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-between pt-36 pb-12 px-6 overflow-hidden bg-[#0D0D0F] subtle-noise select-none">
+      {/* Soft Ambient Mouse-Following Radial Glow */}
+      <div
+        className="pointer-events-none fixed -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[150px] transition-transform duration-700 ease-out"
+        style={{
+          left: `${mousePos.x}px`,
+          top: `${mousePos.y}px`,
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0) 70%)',
         }}
-        transition={{ type: 'spring', stiffness: 50, damping: 20 }}
-      />
-      <motion.div
-        className="absolute bottom-1/3 right-10 w-[300px] h-[300px] bg-rose-500/10 rounded-full blur-3xl pointer-events-none"
-        animate={{
-          x: mousePosition.x * -12,
-          y: mousePosition.y * -12,
-        }}
-        transition={{ type: 'spring', stiffness: 50, damping: 20 }}
       />
 
-      <div className="max-w-7xl mx-auto w-full my-auto z-10 flex flex-col justify-center">
-        {/* Subtitle & Role Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="flex flex-wrap items-center gap-3 mb-6"
-        >
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-neutral-300 uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            UI/UX Designer
-          </span>
-          <span className="text-neutral-600">•</span>
-          <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
-            Product Designer
-          </span>
-          <span className="text-neutral-600">•</span>
-          <span className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
-            Creative Technologist
-          </span>
-        </motion.div>
-
-        {/* Dramatic Oversized Name Typography */}
-        <div className="relative font-bold tracking-tighter uppercase text-white select-none">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
+      <div className="my-auto z-10 w-full max-w-6xl text-center flex flex-col items-center justify-center">
+        {/* Editorial Typewriter Identity Headline */}
+        <div className="min-h-[140px] sm:min-h-[180px] md:min-h-[220px] flex items-center justify-center px-4 w-full overflow-hidden">
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            style={{
-              transform: `translate3d(${mousePosition.x * 3}px, ${mousePosition.y * 3}px, 0)`,
-            }}
-            className="text-[13vw] sm:text-[12vw] lg:text-[10vw] leading-[0.85]"
+            transition={{ duration: 0.8 }}
+            className="text-[8vw] sm:text-[6.5vw] md:text-[5.5vw] lg:text-[75px] xl:text-[90px] font-medium tracking-tight text-[#F5F5F5] leading-none inline-flex items-center justify-center whitespace-nowrap max-w-full"
           >
-            JESNA
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            style={{
-              transform: `translate3d(${mousePosition.x * 6}px, ${mousePosition.y * 6}px, 0)`,
-            }}
-            className="text-[13vw] sm:text-[12vw] lg:text-[10vw] leading-[0.85] text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-300 to-neutral-600"
-          >
-            ELIZABETH
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4 }}
-            style={{
-              transform: `translate3d(${mousePosition.x * 12}px, ${mousePosition.y * 12}px, 0)`,
-            }}
-            className="text-[13vw] sm:text-[12vw] lg:text-[10vw] leading-[0.85]"
-          >
-            JOLLY
-          </motion.div>
+            <span>{displayText}</span>
+            <span className="animate-cursor inline-block w-[3px] md:w-[4px] h-[0.85em] bg-[#F5F5F5] ml-2 shrink-0" />
+          </motion.h1>
         </div>
 
-        {/* Supporting Copy */}
+        {/* Subtitle Introduction */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-8 max-w-2xl text-lg md:text-2xl text-neutral-400 font-light leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-6 sm:mt-10 max-w-2xl text-center text-sm sm:text-base text-[#A0A0A5] font-normal leading-relaxed tracking-normal"
         >
-          I design digital experiences where thoughtful UX meets expressive visual systems and technology.
+          Experienced UI/UX designer blending creativity, technology, and code to build thoughtful digital experiences.
         </motion.p>
       </div>
 
-      {/* Hero Bottom Bar */}
+      {/* Subtle Minimal Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.8 }}
-        className="max-w-7xl mx-auto w-full z-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-neutral-400 uppercase tracking-wider"
+        transition={{ duration: 1, delay: 0.6 }}
+        className="z-10 flex flex-col items-center gap-2 text-[10px] font-mono text-[#A0A0A5] tracking-[0.3em] uppercase"
       >
-        <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-emerald-400" />
-          <span>Based in Kerala, India</span>
+        <span>SCROLL</span>
+        <div className="w-[1px] h-8 bg-gradient-to-b from-white/30 to-transparent relative overflow-hidden">
+          <motion.div
+            animate={{ y: [0, 32, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-full h-1/2 bg-white"
+          />
         </div>
-
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-400" />
-          <span>Available for selected projects</span>
-        </div>
-
-        <Magnetic>
-          <a
-            href="#work"
-            className="flex items-center gap-2 text-white hover:text-neutral-400 transition-colors py-1 group"
-          >
-            <span>SCROLL TO EXPLORE</span>
-            <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-          </a>
-        </Magnetic>
       </motion.div>
     </section>
   );

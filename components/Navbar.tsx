@@ -1,131 +1,139 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import Magnetic from './Magnetic';
 
-const NAV_ITEMS = [
+const NAV_LINKS = [
+  { label: 'Design', href: '#work' },
   { label: 'Work', href: '#work' },
-  { label: 'Playground', href: '#playground' },
   { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Resources', href: '#playground', external: true },
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'py-4 bg-black/60 backdrop-blur-md border-b border-white/10' : 'py-7'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Brand Logo */}
+      {/* Floating Glass Container */}
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl">
+        <div className="bg-[#0D0D0F]/80 backdrop-blur-xl border border-white/10 rounded-full px-5 py-3 shadow-2xl flex items-center justify-between transition-all">
+          {/* Left Brand Area */}
           <Magnetic>
-            <Link
-              href="/"
-              className="text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-1 group"
-            >
-              <span>JESNA</span>
-              <span className="text-neutral-500 group-hover:text-white transition-colors duration-300">
-                .JOLLY
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20 group-hover:border-white/50 transition-colors">
+                <Image
+                  src="/jesna-avatar.png"
+                  alt="Jesna Elizabeth Jolly Profile Avatar"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <span className="text-sm font-medium text-[#F5F5F5] tracking-tight group-hover:text-white transition-colors">
+                Jesna Elizabeth Jolly
               </span>
             </Link>
           </Magnetic>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8 bg-neutral-900/60 backdrop-blur-md px-6 py-2.5 rounded-full border border-white/10 shadow-2xl">
-            {NAV_ITEMS.map((item) => (
-              <Magnetic key={item.label}>
+          {/* Right Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-7">
+            {NAV_LINKS.map((link) => (
+              <Magnetic key={link.label}>
                 <a
-                  href={item.href}
-                  className="text-sm font-medium text-neutral-300 hover:text-white transition-colors relative py-1 group"
+                  href={link.href}
+                  className="text-xs font-medium text-[#A0A0A5] hover:text-[#F5F5F5] transition-colors relative py-1 flex items-center gap-0.5 group"
                 >
-                  {item.label}
+                  <span>{link.label}</span>
+                  {link.external && (
+                    <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-white transition-colors" />
+                  )}
                   <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full" />
                 </a>
               </Magnetic>
             ))}
+
+            <div className="w-[1px] h-4 bg-white/10 mx-1" />
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-3">
+              <Magnetic>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-neutral-300 hover:bg-white/15 hover:text-white transition-all"
+                >
+                  in
+                </a>
+              </Magnetic>
+
+              <Magnetic>
+                <a
+                  href="mailto:hello@example.com"
+                  aria-label="Email"
+                  className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-neutral-300 hover:bg-white/15 hover:text-white transition-all"
+                >
+                  @
+                </a>
+              </Magnetic>
+            </div>
           </nav>
 
-          {/* Availability Badge */}
-          <div className="hidden md:flex items-center gap-4">
-            <Magnetic>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-neutral-200 bg-white/5 hover:bg-white/15 px-4 py-2 rounded-full border border-white/15 transition-all duration-300 group"
-              >
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Available for work</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-            </Magnetic>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2.5 rounded-full bg-neutral-900 border border-white/10 text-white focus:outline-none"
-              aria-label="Toggle Navigation Menu"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-neutral-300 hover:text-white p-1 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </header>
 
-      {/* Mobile Animated Overlay */}
+      {/* Mobile Glass Drawer */}
       <AnimatePresence>
-        {isOpen && (
+        {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, clipPath: 'circle(0% at 90% 5%)' }}
-            animate={{ opacity: 1, clipPath: 'circle(150% at 90% 5%)' }}
-            exit={{ opacity: 0, clipPath: 'circle(0% at 90% 5%)' }}
-            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-40 bg-neutral-950 flex flex-col justify-between p-8 md:hidden text-white"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-24 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-6xl bg-[#0D0D0F]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 text-sm font-medium text-[#F5F5F5] md:hidden shadow-2xl"
           >
-            <div className="mt-20 flex flex-col gap-6">
-              <span className="text-xs uppercase tracking-widest text-neutral-500 font-mono">
-                // Navigation
-              </span>
-              {NAV_ITEMS.map((item, idx) => (
-                <motion.a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.15 + idx * 0.08, duration: 0.4 }}
-                  className="text-4xl font-bold tracking-tight hover:text-neutral-400 transition-colors flex items-center justify-between"
-                >
-                  <span>{item.label}</span>
-                  <ArrowUpRight className="w-8 h-8 text-neutral-600" />
-                </motion.a>
-              ))}
-            </div>
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-2 border-b border-white/5 flex items-center justify-between text-neutral-300 hover:text-white"
+              >
+                <span>{link.label}</span>
+                {link.external && <ArrowUpRight className="w-4 h-4 text-neutral-500" />}
+              </a>
+            ))}
 
-            <div className="border-t border-white/10 pt-6 flex flex-col gap-2">
-              <span className="text-xs uppercase tracking-widest text-neutral-500 font-mono">
-                Status
-              </span>
-              <p className="text-sm text-neutral-300 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                Based in Kerala, India — Open for selected opportunities
-              </p>
+            <div className="flex items-center gap-4 pt-2">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white"
+              >
+                <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center font-bold">in</span>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="mailto:hello@example.com"
+                className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white"
+              >
+                <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center font-bold">@</span>
+                <span>Email</span>
+              </a>
             </div>
           </motion.div>
         )}
