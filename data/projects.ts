@@ -23,6 +23,10 @@ export interface Project {
   accentColor: string;
   galleryImages: { title: string; caption: string; color: string }[];
   behanceUrl?: string;
+  /** Shown on the Selected Work card. Falls back to a procedural mockup. */
+  showcaseImage?: string;
+  /** Full-width visual at the top of the case study page. */
+  bannerImage?: string;
 }
 
 export interface PlaygroundItem {
@@ -104,11 +108,119 @@ export const FEATURED_PROJECTS: Project[] = [
       { title: 'Tiles Collection Selector', caption: 'Marble Look, Stone Look, Wood Look, and Green Look cards', color: '#78350f' },
       { title: 'Curated Categories', caption: 'Faucets, Bathroom, Furniture, and Tiles navigation grid', color: '#92400e' }
     ],
-    behanceUrl: 'https://www.behance.net/gallery/253618375/Furniture-Store-UIUX-by-Jesna-Elizabeth-Jolly'
+    behanceUrl: 'https://www.behance.net/gallery/253618375/Furniture-Store-UIUX-by-Jesna-Elizabeth-Jolly',
+    showcaseImage: '/furniture-store.png',
+    bannerImage: '/furniture-store-banner.png'
+  },
+  {
+    slug: 'botaniq',
+    number: '02',
+    title: 'BOTANIQ',
+    subtitle: 'UI/UX Case Study — Plant Shop E-Commerce & Product Discovery',
+    category: 'E-Commerce & Retail',
+    services: ['UI/UX Design', 'E-Commerce', 'Visual Design'],
+    year: '2025',
+    client: 'Botaniq',
+    role: 'UI/UX Designer',
+    duration: '2 Weeks',
+    tools: ['Figma', 'Photoshop'],
+    summary:
+      'A bright, botanical e-commerce landing experience for a houseplant shop, pairing editorial typography with full-bleed plant photography to make browsing feel calm rather than transactional.',
+    problem:
+      'Plant shops online tend to look like generic product grids, which strips away the warmth and tactility that makes buying plants appealing in person.',
+    objective:
+      'Design a light, airy storefront where photography leads, product detail sits within reach, and the path to shopping stays obvious without shouting.',
+    research: [
+      'Reviewed houseplant and lifestyle retail storefronts for layout and tone.',
+      'Studied how editorial split layouts balance imagery against product detail.',
+      'Tested green-on-white contrast levels for legibility across headings and body copy.'
+    ],
+    userInsights: [
+      'Large, uncropped plant photography communicates quality faster than product copy.',
+      'Shoppers want the botanical name and care context visible alongside the hero product.',
+      'A single, unmistakable primary action reduces hesitation on the landing screen.'
+    ],
+    designExploration:
+      'Built a three-column split: typographic hero on the left, a full-height photographic column through the centre, and a product detail panel on the right. Used a forest-green accent as the single highlight colour against white.',
+    wireframesSummary:
+      'Wireframed the landing composition, the highlight treatment on the headline, the primary and secondary calls to action, and the product detail panel with scroll cue.',
+    results: [
+      'Photography-led layout that keeps the storefront feeling like a plant shop, not a catalogue.',
+      'A consistent green accent system spanning headline highlight, primary button, and links.',
+      'Product detail surfaced on the landing screen, so the first scroll already carries context.'
+    ],
+    learnings: [
+      'Restricting the palette to one accent colour makes a photography-heavy layout feel composed rather than busy.',
+      'A full-bleed image column is an effective divider — it separates content zones without needing rules or boxes.'
+    ],
+    heroGradient: 'from-emerald-950/50 via-neutral-900 to-black',
+    accentColor: '#2f7d3a',
+    galleryImages: [
+      { title: 'Landing Composition', caption: 'Three-column split with full-height photography', color: '#052e16' },
+      { title: 'Typographic Hero', caption: 'Highlighted headline and paired calls to action', color: '#14532d' },
+      { title: 'Product Detail Panel', caption: 'Parrot Heliconia with botanical name and care notes', color: '#166534' },
+      { title: 'Navigation & Utility', caption: 'Login, search, and basket in the top rail', color: '#15803d' }
+    ],
+    behanceUrl: 'https://www.behance.net/gallery/238588085/Botaniq',
+    showcaseImage: '/Botaniq-HOME.png',
+    bannerImage: '/Botaniq-HOME.png'
+  },
+  {
+    slug: 'visora',
+    number: '03',
+    title: 'VISORA',
+    subtitle: 'AI Image Generation App — Where Imagination Meets Intelligence',
+    category: 'AI Product & Mobile App',
+    services: ['UI/UX Design', 'Mobile UI', 'AI Product Design'],
+    year: '2025',
+    client: 'Visora',
+    role: 'UI/UX Designer',
+    duration: '3 Weeks',
+    tools: ['Figma', 'Photoshop'],
+    summary:
+      'A dark-themed mobile app for text-to-image generation, built around a single clear loop: write a prompt, choose a style, set the ratio, generate — then refine or share the result.',
+    problem:
+      'AI image tools tend to bury their controls behind jargon and dense settings, so first-time users are unsure what to type, what the style options actually do, or how to improve a result they do not like.',
+    objective:
+      'Design a mobile generation flow where every control is visible and self-explanatory, styles are shown rather than named, and refining a result is as easy as making one.',
+    research: [
+      'Compared prompt-entry and style-selection patterns across existing AI image generators.',
+      'Reviewed where users stall in the generate loop — prompt writing, style choice, and post-result refinement.',
+      'Tested legibility of a dark interface against full-colour generated imagery.'
+    ],
+    userInsights: [
+      'Visual style swatches communicate far faster than style names on their own.',
+      'Users expect to adjust and regenerate without losing the prompt they already wrote.',
+      'Sharing is part of the creative loop, not an afterthought bolted onto the end.'
+    ],
+    designExploration:
+      'Built a dark interface so generated imagery carries the colour, with a violet accent reserved for the primary generate action. Styles are presented as an image grid — Realistic, 3D, Artistic, Illustration, Minimalism, Cartoon, Fantasy, Anime, Street Art, Holographic — each previewing its own look.',
+    wireframesSummary:
+      'Wireframed the prompt and upload entry point, the style grid, the aspect ratio selector, the result view with enhance-prompt and regenerate controls, and the share sheet.',
+    results: [
+      'A single-screen generation flow: prompt, style, and ratio all reachable without navigating away.',
+      'Style selection shown as previews rather than labels, so the choice is made visually.',
+      'Result screen keeps the original prompt in place, making regeneration and refinement one tap.'
+    ],
+    learnings: [
+      'For generative tools, showing the output of an option beats describing it — the style grid does more work than any label could.',
+      'A dark canvas lets vivid generated imagery lead without the interface competing for attention.'
+    ],
+    heroGradient: 'from-violet-900/40 via-neutral-900 to-black',
+    accentColor: '#8b5cf6',
+    galleryImages: [
+      { title: 'Prompt & Style Selection', caption: 'Prompt entry, image upload, and the visual style grid', color: '#2e1065' },
+      { title: 'Aspect Ratio & Generate', caption: 'Ratio presets with the primary generate action', color: '#4c1d95' },
+      { title: 'Result & Enhance Prompt', caption: 'Generated output with variations and regenerate controls', color: '#5b21b6' },
+      { title: 'Share My Imagination', caption: 'Share sheet for sending results onward', color: '#6d28d9' }
+    ],
+    behanceUrl: 'https://www.behance.net/gallery/238495795/Visora',
+    showcaseImage: '/Visora.png',
+    bannerImage: '/Visora.png'
   },
   {
     slug: 'lumo',
-    number: '02',
+    number: '04',
     title: 'LUMO',
     subtitle: 'Automated Wealth Management & Web3 Financial Suite',
     category: 'Fintech Mobile App',
@@ -153,7 +265,7 @@ export const FEATURED_PROJECTS: Project[] = [
   },
   {
     slug: 'anamtha-agri',
-    number: '03',
+    number: '05',
     title: 'ANAMTHA AGRI',
     subtitle: 'Climate-Intelligent Precision Agriculture Ecosystem',
     category: 'Agriculture Platform',
@@ -198,7 +310,7 @@ export const FEATURED_PROJECTS: Project[] = [
   },
   {
     slug: 'amoria',
-    number: '04',
+    number: '06',
     title: 'AMORIA',
     subtitle: 'Luxury Olfactory E-Commerce & Interactive Fragrance Finder',
     category: 'Luxury Fragrance Ecommerce',

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { FEATURED_PROJECTS, Project } from '@/data/projects';
@@ -120,12 +119,12 @@ function ProjectCard({ project }: { project: Project }) {
               </span>
             </div>
 
-            {project.slug === 'furniture-store' ? (
+            {project.showcaseImage ? (
               <div className="absolute inset-0 z-0 bg-[#0A0A0C] flex items-center justify-center p-2 sm:p-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/furniture-store.png"
-                  alt="Furniture & Tiles Store UI/UX Showcase"
+                  src={project.showcaseImage}
+                  alt={`${project.title} UI/UX showcase`}
                   className="w-full h-full object-contain group-hover:scale-102 transition-transform duration-700 rounded-xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
@@ -133,7 +132,7 @@ function ProjectCard({ project }: { project: Project }) {
             ) : null}
 
             {/* Procedural UI Mockup Component */}
-            {project.slug !== 'furniture-store' && (
+            {!project.showcaseImage && (
               <div className="z-10 bg-neutral-950/80 backdrop-blur-xl border border-white/15 rounded-xl p-6 shadow-2xl space-y-4 max-w-lg mx-auto w-full group-hover:border-white/30 transition-colors">
                 <div className="flex items-center justify-between border-b border-white/10 pb-3">
                   <div className="flex gap-2">

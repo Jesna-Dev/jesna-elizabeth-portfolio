@@ -98,26 +98,29 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
           </div>
         </div>
 
-        {/* Hero Visual Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className={`mt-16 w-full rounded-3xl bg-[#0A0A0C] border border-white/10 overflow-hidden shadow-2xl relative ${
-            project.slug === 'furniture-store' ? 'min-h-[500px] md:min-h-[700px] flex items-center justify-center p-4 sm:p-8' : 'h-[400px] sm:h-[550px] p-8 flex flex-col justify-between'
-          }`}
-        >
-          {project.slug === 'furniture-store' ? (
-            <div className="w-full h-full flex flex-col items-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/furniture-store-banner.png"
-                alt="Full Behance UI/UX Case Study Presentation Banner"
-                className="w-full h-auto object-contain rounded-2xl border border-white/10 shadow-2xl"
-              />
-            </div>
-          ) : (
-            <>
+        {/* Hero Visual Banner — real designs break out of the container and run
+            edge to edge; the procedural fallback stays inset. */}
+        {project.bannerImage ? (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mt-16 relative left-1/2 -translate-x-1/2 w-screen bg-[#0A0A0C] border-y border-white/10 overflow-hidden"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.bannerImage}
+              alt={`${project.title} case study presentation banner`}
+              className="block w-full h-auto"
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mt-16 w-full rounded-3xl bg-[#0A0A0C] border border-white/10 overflow-hidden shadow-2xl relative h-[400px] sm:h-[550px] p-8 flex flex-col justify-between"
+          >
               <div className="flex justify-between items-start z-10">
                 <span className="text-xs font-mono uppercase tracking-widest text-neutral-400 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
                   Interactive Case Study Visualizer
@@ -143,9 +146,8 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
                 <span>Scroll for detailed research & architecture</span>
                 <span className="text-emerald-400">Design System Verified ✓</span>
               </div>
-            </>
-          )}
-        </motion.div>
+          </motion.div>
+        )}
       </section>
 
       {/* Case Study Core Body Sections */}
