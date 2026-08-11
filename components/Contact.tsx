@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="flex flex-wrap items-center gap-4">
           <Magnetic>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:jesnakelizabethjolly@gmail.com"
               className="inline-flex items-center gap-3 px-8 py-5 rounded-full bg-white text-black font-semibold text-lg hover:bg-neutral-200 transition-colors shadow-2xl group"
             >
               <Mail className="w-5 h-5 text-black" />
@@ -36,7 +36,7 @@ export default function Contact() {
 
           <Magnetic>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/jesna-k-elizabeth-jolly/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-5 rounded-full bg-white/5 border border-white/15 text-white font-medium hover:bg-white/10 transition-colors"
@@ -48,7 +48,7 @@ export default function Contact() {
 
           <Magnetic>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:jesnakelizabethjolly@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-5 rounded-full bg-white/5 border border-white/15 text-white font-medium hover:bg-white/10 transition-colors"
             >
               <Globe className="w-5 h-5" />
@@ -63,7 +63,7 @@ export default function Contact() {
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             Available for freelance & full-time opportunities
           </span>
-          <span>Primary Email: hello@example.com</span>
+          <span>Primary Email: jesnakelizabethjolly@gmail.com</span>
         </div>
       </div>
     </section>

@@ -62,7 +62,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <Magnetic>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/jesna-k-elizabeth-jolly/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -74,7 +74,7 @@ export default function Navbar() {
 
               <Magnetic>
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:jesnakelizabethjolly@gmail.com"
                   aria-label="Email"
                   className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-neutral-300 hover:bg-white/15 hover:text-white transition-all"
                 >
@@ -119,7 +119,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-4 pt-2">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/jesna-k-elizabeth-jolly/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white"
@@ -128,7 +128,7 @@ export default function Navbar() {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="mailto:hello@example.com"
+                href="mailto:jesnakelizabethjolly@gmail.com"
                 className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white"
               >
                 <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center font-bold">@</span>

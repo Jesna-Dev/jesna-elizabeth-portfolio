@@ -26,7 +26,7 @@ export default function Footer() {
 
         <div className="flex items-center gap-6">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/jesna-k-elizabeth-jolly/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"
@@ -34,14 +34,14 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://behance.net"
+            href="https://www.behance.net/jesnakelizabe"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"
           >
             Behance
           </a>
-          <a href="mailto:hello@example.com" className="hover:text-white transition-colors">
+          <a href="mailto:jesnakelizabethjolly@gmail.com" className="hover:text-white transition-colors">
             Email
           </a>
         </div>
