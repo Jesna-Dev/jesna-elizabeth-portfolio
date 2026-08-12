@@ -22,6 +22,22 @@
     color: #0d0d0f;
   }
 
+  /*
+   * CustomCursor draws the pointer itself, so hide the native arrow that
+   * would otherwise sit on top of it. Scoped to fine pointers because the
+   * component bails out on touch devices, which keep their normal behaviour.
+   * Text fields keep a real cursor so the caret stays findable.
+   */
+  @media (pointer: fine) {
+    *, a, button, [role="button"], [data-cursor] {
+      cursor: none;
+    }
+
+    input, textarea, select {
+      cursor: auto;
+    }
+  }
+
   /* Custom scrollbar reset */
   ::-webkit-scrollbar {
     width: 5px;
