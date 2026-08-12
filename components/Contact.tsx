@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Mail, Link as LinkIcon, Globe } from 'lucide-react';
+import { ArrowUpRight, Mail } from 'lucide-react';
 import Magnetic from './Magnetic';
+import { SOCIAL_LINKS, EMAIL } from '@/data/social';
 
 export default function Contact() {
   return (
@@ -25,7 +26,7 @@ export default function Contact() {
         <div className="flex flex-wrap items-center gap-4">
           <Magnetic>
             <a
-              href="mailto:jesnakelizabethjolly@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="inline-flex items-center gap-3 px-8 py-5 rounded-full bg-white text-black font-semibold text-lg hover:bg-neutral-200 transition-colors shadow-2xl group"
             >
               <Mail className="w-5 h-5 text-black" />
@@ -34,27 +35,21 @@ export default function Contact() {
             </a>
           </Magnetic>
 
-          <Magnetic>
-            <a
-              href="https://www.linkedin.com/in/jesna-k-elizabeth-jolly/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-5 rounded-full bg-white/5 border border-white/15 text-white font-medium hover:bg-white/10 transition-colors"
-            >
-              <LinkIcon className="w-5 h-5" />
-              <span>LinkedIn</span>
-            </a>
-          </Magnetic>
-
-          <Magnetic>
-            <a
-              href="mailto:jesnakelizabethjolly@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-5 rounded-full bg-white/5 border border-white/15 text-white font-medium hover:bg-white/10 transition-colors"
-            >
-              <Globe className="w-5 h-5" />
-              <span>Email ↗</span>
-            </a>
-          </Magnetic>
+          {SOCIAL_LINKS.filter((social) => social.id !== 'email').map((social) => (
+            <Magnetic key={social.id}>
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-5 rounded-full bg-white/5 border border-white/15 text-white font-medium hover:bg-white/10 transition-colors"
+              >
+                <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold">
+                  {social.glyph}
+                </span>
+                <span>{social.label}</span>
+              </a>
+            </Magnetic>
+          ))}
         </div>
 
         {/* Status Line */}
@@ -63,7 +58,9 @@ export default function Contact() {
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             Available for freelance & full-time opportunities
           </span>
-          <span>Primary Email: jesnakelizabethjolly@gmail.com</span>
+          <a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors">
+            Primary Email: {EMAIL}
+          </a>
         </div>
       </div>
     </section>

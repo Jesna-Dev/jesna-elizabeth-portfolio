@@ -37,6 +37,10 @@ export interface PlaygroundItem {
   description: string;
   interactionType: 'follow' | 'rotate' | 'shift' | 'zoom' | 'tilt' | 'color';
   accentColor: string;
+  /** Live URL. When set, the whole card becomes a link out. */
+  link?: string;
+  /** Build status, shown in place of the card's call to action while unshipped. */
+  status?: string;
 }
 
 export interface WebProject {
@@ -357,58 +361,74 @@ export const FEATURED_PROJECTS: Project[] = [
 
 export const PLAYGROUND_ITEMS: PlaygroundItem[] = [
   {
-    id: 'nook',
+    id: 'leaders-of-change',
     number: '01',
-    title: 'Nook',
-    category: 'Spatial Audio Interface',
-    description: 'Dynamic ambient soundscape mixer with generative visual waves.',
-    interactionType: 'follow',
-    accentColor: '#38bdf8'
-  },
-  {
-    id: 'motion-lab',
-    number: '02',
-    title: 'Motion Lab',
-    category: 'Physics & Kinetics',
-    description: 'Verlet integration particle system reacting to cursor velocity.',
-    interactionType: 'rotate',
-    accentColor: '#a855f7'
-  },
-  {
-    id: 'ai-moodboard',
-    number: '03',
-    title: 'AI Moodboard',
-    category: 'Generative Design',
-    description: 'Real-time semantic canvas clustering visual inspirations automatically.',
+    title: 'Leaders of Change',
+    category: 'Live Web Experience',
+    description: 'Initiative site for the UAE leadership platform — I coded the mobile design solo.',
     interactionType: 'shift',
-    accentColor: '#ec4899'
+    accentColor: '#f12020',
+    link: 'https://www.leadersofchange.ae/'
   },
   {
-    id: 'type-playground',
+    id: 'anamth-agri',
+    number: '02',
+    title: 'Anamth Agri',
+    category: 'Live Web Experience',
+    description: 'Agribusiness site for a sustainable farming enterprise — products, agronomy services, and farmer impact.',
+    interactionType: 'follow',
+    accentColor: '#16a34a',
+    link: 'https://anamtha-agri.vercel.app/home'
+  },
+  {
+    id: 'sentiment-chat',
+    number: '03',
+    title: 'Sentiment Chat',
+    category: 'Live Web Experience',
+    description: 'Account-based messaging app that reads the emotional tone of a conversation as it happens.',
+    interactionType: 'rotate',
+    accentColor: '#8b5cf6',
+    link: 'https://sentiment-chat-dev.vercel.app/'
+  },
+  {
+    id: 'msc-vessel-analytics',
     number: '04',
-    title: 'Type Playground',
-    category: 'Variable Typography',
-    description: 'Variable font axis manipulation mapped to mouse position & audio input.',
-    interactionType: 'zoom',
-    accentColor: '#f97316'
+    title: 'Vessel Performance Analytics',
+    category: 'Maritime Data Platform',
+    description: 'Fleet performance analytics web application for MSC — voyage efficiency, fuel burn, and vessel health at a glance.',
+    interactionType: 'shift',
+    accentColor: '#0b3f8c',
+    link: 'https://www.msc.com/'
   },
   {
-    id: '3d-product-explorer',
+    id: 'aramco',
     number: '05',
-    title: '3D Product Explorer',
-    category: 'WebGL Interaction',
-    description: 'Raymarching material shader explorer with physical glass refractions.',
-    interactionType: 'tilt',
-    accentColor: '#10b981'
+    title: 'Aramco',
+    category: 'Maritime Data Platform',
+    description: 'Vessel performance analytics web application delivered for Aramco — fleet efficiency and operational health across marine operations.',
+    interactionType: 'zoom',
+    accentColor: '#00843d',
+    link: 'https://india.aramco.com/en'
   },
   {
-    id: 'interface-experiments',
+    id: 'milaha',
     number: '06',
-    title: 'Interface Experiments',
-    category: 'Micro UX Motion',
-    description: 'Collection of unusual button states, spatial menus, and dynamic focus rings.',
+    title: 'Milaha',
+    category: 'Maritime Data Platform',
+    description: 'Vessel performance analytics web application delivered for Milaha — shipping, offshore, and marine logistics fleets in one view.',
+    interactionType: 'tilt',
+    accentColor: '#0e7490',
+    link: 'https://www.milaha.com/en'
+  },
+  {
+    id: 'workora',
+    number: '07',
+    title: 'Workora',
+    category: 'Service Marketplace',
+    description: 'Marketplace connecting customers with skilled workers — booking, matching, and trust built into the flow.',
     interactionType: 'color',
-    accentColor: '#6366f1'
+    accentColor: '#f59e0b',
+    status: 'In Progress'
   }
 ];
 

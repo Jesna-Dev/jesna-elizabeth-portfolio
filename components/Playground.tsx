@@ -52,9 +52,20 @@ function PlaygroundCard({ item }: { item: PlaygroundItem }) {
         setIsHovered(false);
         setMousePos({ x: 0, y: 0 });
       }}
-      data-cursor="DRAG ↔"
+      data-cursor={item.link ? 'VISIT ↗' : 'DRAG ↔'}
       className="group relative rounded-2xl border border-white/10 bg-neutral-900/60 p-6 flex flex-col justify-between h-[340px] overflow-hidden hover:border-white/30 transition-all duration-300 shadow-xl"
     >
+      {/* Whole card links out when the experiment has a live URL */}
+      {item.link && (
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${item.title} in a new tab`}
+          className="absolute inset-0 z-20"
+        />
+      )}
+
       {/* Background Interactive Ambient Motion */}
       <motion.div
         animate={{
@@ -97,9 +108,16 @@ function PlaygroundCard({ item }: { item: PlaygroundItem }) {
       {/* Bottom Footer */}
       <div className="z-10 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-neutral-500 uppercase tracking-widest">
         <span>Interaction: {item.interactionType}</span>
-        <span className="text-white group-hover:text-emerald-400 transition-colors">
-          View Demo ↗
-        </span>
+        {item.status && !item.link ? (
+          <span className="inline-flex items-center gap-2 text-amber-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            {item.status}
+          </span>
+        ) : (
+          <span className="text-white group-hover:text-emerald-400 transition-colors">
+            {item.link ? 'Visit Site ↗' : 'View Demo ↗'}
+          </span>
+        )}
       </div>
     </motion.div>
   );

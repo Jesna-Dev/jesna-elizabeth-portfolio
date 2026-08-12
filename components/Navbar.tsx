@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import Magnetic from './Magnetic';
+import { SOCIAL_LINKS, isExternalSocial } from '@/data/social';
 
 const NAV_LINKS = [
   { label: 'Work', href: '#work' },
@@ -60,27 +61,20 @@ export default function Navbar() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-3">
-              <Magnetic>
-                <a
-                  href="https://www.linkedin.com/in/jesna-k-elizabeth-jolly/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-neutral-300 hover:bg-white/15 hover:text-white transition-all"
-                >
-                  in
-                </a>
-              </Magnetic>
-
-              <Magnetic>
-                <a
-                  href="mailto:jesnakelizabethjolly@gmail.com"
-                  aria-label="Email"
-                  className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-neutral-300 hover:bg-white/15 hover:text-white transition-all"
-                >
-                  @
-                </a>
-              </Magnetic>
+              {SOCIAL_LINKS.map((social) => (
+                <Magnetic key={social.id}>
+                  <a
+                    href={social.href}
+                    {...(isExternalSocial(social.href)
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                    aria-label={social.label}
+                    className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-neutral-300 hover:bg-white/15 hover:text-white transition-all"
+                  >
+                    {social.glyph}
+                  </a>
+                </Magnetic>
+              ))}
             </div>
           </nav>
 
@@ -117,23 +111,23 @@ export default function Navbar() {
               </a>
             ))}
 
-            <div className="flex items-center gap-4 pt-2">
-              <a
-                href="https://www.linkedin.com/in/jesna-k-elizabeth-jolly/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white"
-              >
-                <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center font-bold">in</span>
-                <span>LinkedIn</span>
-              </a>
-              <a
-                href="mailto:jesnakelizabethjolly@gmail.com"
-                className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white"
-              >
-                <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center font-bold">@</span>
-                <span>Email</span>
-              </a>
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.href}
+                  {...(isExternalSocial(social.href)
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white"
+                >
+                  <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center font-bold">
+                    {social.glyph}
+                  </span>
+                  <span>{social.label}</span>
+                </a>
+              ))}
             </div>
           </motion.div>
         )}

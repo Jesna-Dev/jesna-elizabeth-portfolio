@@ -3,6 +3,7 @@
 import React from 'react';
 import Magnetic from './Magnetic';
 import { ArrowUp } from 'lucide-react';
+import { SOCIAL_LINKS, isExternalSocial } from '@/data/social';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -24,26 +25,19 @@ export default function Footer() {
           <span>UI/UX Designer · Creative Technologist</span>
         </div>
 
-        <div className="flex items-center gap-6">
-          <a
-            href="https://www.linkedin.com/in/jesna-k-elizabeth-jolly/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://www.behance.net/jesnakelizabe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            Behance
-          </a>
-          <a href="mailto:jesnakelizabethjolly@gmail.com" className="hover:text-white transition-colors">
-            Email
-          </a>
+        <div className="flex flex-wrap items-center justify-center gap-6">
+          {SOCIAL_LINKS.map((social) => (
+            <a
+              key={social.id}
+              href={social.href}
+              {...(isExternalSocial(social.href)
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+              className="hover:text-white transition-colors"
+            >
+              {social.label}
+            </a>
+          ))}
         </div>
 
         <div className="flex items-center gap-6">

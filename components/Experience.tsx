@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar } from 'lucide-react';
+import { MapPin, Calendar, Download } from 'lucide-react';
+import Magnetic from './Magnetic';
+import { RESUME_URL } from '@/data/social';
 
 export interface ExperienceItem {
   company: string;
@@ -72,9 +74,22 @@ export default function Experience() {
               Employment <br className="hidden sm:block" /> Experience
             </h2>
           </div>
-          <p className="text-neutral-400 text-sm md:text-base font-light max-w-md">
-            Over 5+ years combining 2+ years of UI/UX design with 3+ years of technical frontend development background.
-          </p>
+          <div className="max-w-md space-y-6">
+            <p className="text-neutral-400 text-sm md:text-base font-light">
+              Over 5+ years combining 2+ years of UI/UX design with 3+ years of technical frontend development background.
+            </p>
+
+            <Magnetic>
+              <a
+                href={RESUME_URL}
+                download
+                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-colors shadow-xl group"
+              >
+                <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                <span>Download Resume</span>
+              </a>
+            </Magnetic>
+          </div>
         </div>
 
         {/* Experience List */}
