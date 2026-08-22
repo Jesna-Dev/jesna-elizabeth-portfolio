@@ -76,7 +76,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'Pet Care & Services',
     services: ['UI/UX Design', 'Landing Page', 'Visual Identity'],
     year: '2025',
-    client: 'Paw Pet Care',
+    client: 'Paws Pet Care',
     role: 'UI/UX Designer',
     duration: '2 Weeks',
     tools: ['Figma', 'Photoshop'],
