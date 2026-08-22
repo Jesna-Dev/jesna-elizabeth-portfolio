@@ -71,7 +71,7 @@ export const FEATURED_PROJECTS: Project[] = [
   {
     slug: 'paw',
     number: '01',
-    title: 'PAW',
+    title: 'PAWS',
     subtitle: 'Landing Page — Pet Grooming & Care Shop in the UAE',
     category: 'Pet Care & Services',
     services: ['UI/UX Design', 'Landing Page', 'Visual Identity'],
