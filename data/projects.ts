@@ -69,8 +69,61 @@ export interface Testimonial {
 
 export const FEATURED_PROJECTS: Project[] = [
   {
-    slug: 'furniture-store',
+    slug: 'paw',
     number: '01',
+    title: 'PAW',
+    subtitle: 'Landing Page — Pet Grooming & Care Shop in the UAE',
+    category: 'Pet Care & Services',
+    services: ['UI/UX Design', 'Landing Page', 'Visual Identity'],
+    year: '2025',
+    client: 'Paw Pet Care',
+    role: 'UI/UX Designer',
+    duration: '2 Weeks',
+    tools: ['Figma', 'Photoshop'],
+    summary:
+      'A warm, high-energy landing page for a UAE pet grooming centre, built on a single saturated orange field, editorial serif type, and cut-out pet photography that carries the personality of the shop.',
+    problem:
+      'Local grooming businesses usually live on generic booking templates or social profiles alone, so nothing on screen communicates warmth, trust, or what the service actually involves before a customer calls.',
+    objective:
+      'Design a landing page that reads as friendly and premium at once, puts booking within immediate reach, and lets a first-time visitor understand the services and see real grooming results without hunting.',
+    research: [
+      'Reviewed pet grooming and veterinary sites across the UAE for tone, booking flow, and trust signals.',
+      'Studied how cut-out photography behaves against flat single-colour backgrounds.',
+      'Tested white-on-orange contrast across headline, body, and button states.'
+    ],
+    userInsights: [
+      'Pet owners look for the animal first — photography sets the emotional tone before any copy is read.',
+      'Booking and contacting are two different intents, so both deserve a visible action rather than one buried menu.',
+      'A short, plain-language promise reassures faster than a list of service specifications.'
+    ],
+    designExploration:
+      'Committed to one saturated orange as the whole brand field, with white reserved for type and actions so the palette never competes with the pet photography. Paired a high-contrast serif headline with a rounded paw logo mark and soft paw motifs used as background texture.',
+    wireframesSummary:
+      'Wireframed the hero composition and its dual call to action, the five-item navigation rail (Home, Contact, About, Service, Gallery), the service cards, and the grooming gallery grid.',
+    results: [
+      'A single-colour brand field that stays recognisable across every section of the page.',
+      'Booking and contact placed side by side in the hero, so neither intent is a dead end.',
+      'Cut-out pet photography carrying the warmth that stock grooming imagery usually flattens.'
+    ],
+    learnings: [
+      'One committed brand colour can do the work of an entire palette when photography supplies the variation.',
+      'A serif headline against a playful subject keeps a friendly brand from reading as childish.'
+    ],
+    heroGradient: 'from-orange-900/40 via-neutral-900 to-black',
+    accentColor: '#f03c12',
+    galleryImages: [
+      { title: 'Hero Composition', caption: 'Serif headline, dual call to action, and cut-out pet photography', color: '#7c2d12' },
+      { title: 'Navigation & Brand Mark', caption: 'Paw logo mark with the five-item top rail', color: '#9a3412' },
+      { title: 'Service Cards', caption: 'Grooming, washing, and care services at a glance', color: '#c2410c' },
+      { title: 'Gallery Grid', caption: 'Before and after grooming results', color: '#ea580c' }
+    ],
+    behanceUrl: 'https://www.behance.net/gallery/222469221/Paw-Landing-page-for-pet-care-shop',
+    showcaseImage: '/paw.png',
+    bannerImage: '/paw.png'
+  },
+  {
+    slug: 'furniture-store',
+    number: '02',
     title: 'LIVING & SURFACE E-COMMERCE',
     subtitle: 'UI/UX Case Study — Modern Furniture & Surface Tiles Shopping Experience',
     category: 'E-Commerce & Interior Design',
@@ -118,7 +171,7 @@ export const FEATURED_PROJECTS: Project[] = [
   },
   {
     slug: 'botaniq',
-    number: '02',
+    number: '03',
     title: 'BOTANIQ',
     subtitle: 'UI/UX Case Study — Plant Shop E-Commerce & Product Discovery',
     category: 'E-Commerce & Retail',
@@ -171,7 +224,7 @@ export const FEATURED_PROJECTS: Project[] = [
   },
   {
     slug: 'visora',
-    number: '03',
+    number: '04',
     title: 'VISORA',
     subtitle: 'AI Image Generation App — Where Imagination Meets Intelligence',
     category: 'AI Product & Mobile App',
@@ -223,139 +276,57 @@ export const FEATURED_PROJECTS: Project[] = [
     bannerImage: '/Visora.png'
   },
   {
-    slug: 'lumo',
-    number: '04',
-    title: 'LUMO',
-    subtitle: 'Automated Wealth Management & Web3 Financial Suite',
-    category: 'Fintech Mobile App',
-    services: ['UX Research', 'Product Design', 'Mobile UI'],
-    year: '2025',
-    client: 'Lumo Financial Labs',
-    role: 'Product Designer',
-    duration: '3 Months',
-    tools: ['Figma', 'Protopie', 'After Effects', 'Design Systems'],
-    summary: 'An intelligent personal finance companion that translates complex algorithmic yield strategies into clear visual insights for everyday investors.',
-    problem: 'Traditional investment apps overwhelm users with dense financial tables and crypto jargons, causing anxiety and low retention among novice wealth managers.',
-    objective: 'Create an inviting, motion-rich mobile experience that makes smart saving, automated portfolio rebalancing, and asset tracking effortlessly simple.',
-    research: [
-      'Surveilled 250+ Gen-Z and Millennial retail investors.',
-      'Analyzed competitive onboarding friction in 10 leading fintech applications.',
-      'Ran bi-weekly usability feedback sessions with financial literacy focus groups.'
-    ],
-    userInsights: [
-      'Visual progress charts motivate long-term investment discipline far better than static numbers.',
-      'Tactile haptic feedback enhances trust during high-value financial transfers.',
-      'Transparent fee breakdowns eliminate financial transaction anxiety.'
-    ],
-    designExploration: 'Created dark futuristic aesthetic with glassmorphism cards, vibrant neon accent strokes, and fluid spring micro-interactions.',
-    wireframesSummary: 'Built dynamic flowcharts for biometric authentication, wallet setup, automated recurring deposits, and asset breakdown views.',
-    results: [
-      '38% boost in user onboarding completion within the first week.',
-      'Average session duration increased by 2.4x.',
-      'Awarded Best Mobile UI Design at Fintech Innovation Awards 2025.'
-    ],
-    learnings: [
-      'Financial data visualization demands extreme clarity—decorative polish should never obstruct metric legibility.',
-      'Progressive disclosure keeps dense settings screens feeling light and accessible.'
-    ],
-    heroGradient: 'from-violet-900/40 via-neutral-900 to-black',
-    accentColor: '#8b5cf6',
-    galleryImages: [
-      { title: 'Portfolio Overview', caption: 'Interactive portfolio chart with real-time analytics', color: '#4c1d95' },
-      { title: 'Automated Yield Vaults', caption: 'Smart allocation algorithms explained visually', color: '#3b0764' },
-      { title: 'Instant Transfer Screen', caption: 'Fluid drag-to-confirm payment gesture', color: '#581c87' },
-      { title: 'Dark Mode Widget Suite', caption: 'Lockscreen & iOS homescreen modular widgets', color: '#6d28d9' }
-    ]
-  },
-  {
-    slug: 'anamtha-agri',
+    slug: 'flex-track',
     number: '05',
-    title: 'ANAMTHA AGRI',
-    subtitle: 'Climate-Intelligent Precision Agriculture Ecosystem',
-    category: 'Agriculture Platform',
-    services: ['Brand Identity', 'UX/UI', 'Web Design', 'IoT Systems'],
-    year: '2024',
-    client: 'Anamtha Technologies',
-    role: 'Lead UX/UI & Web Designer',
-    duration: '5 Months',
-    tools: ['Figma', 'Next.js', 'GSAP', 'Tailwind CSS'],
-    summary: 'A data-driven agricultural platform connecting IoT soil sensors, satellite imagery, and crop advisory tools to help farmers optimize yield and reduce water waste.',
-    problem: 'Agricultural workers faced fragmented weather reports, manual irrigation guessing games, and unoptimized fertilizer application, resulting in crop losses and excessive resource waste.',
-    objective: 'Deliver a streamlined web and tablet interface optimized for daylight outdoor viewing that translates sensor telemetry into actionable daily farm tasks.',
+    title: 'FLEX TRACK',
+    subtitle: 'Fitness Application UI — Track Workouts, Set Goals, Stay Motivated',
+    category: 'Fitness Mobile App',
+    services: ['UI/UX Design', 'Mobile UI', 'Design Systems'],
+    year: '2025',
+    client: 'FlexTrack',
+    role: 'UI/UX Designer',
+    duration: '3 Weeks',
+    tools: ['Figma', 'Photoshop'],
+    summary:
+      'A dark-navy fitness app built around one daily question — what am I training today? — pairing an at-a-glance activity dashboard with structured multi-week plans and a browsable workout library.',
+    problem:
+      'Fitness apps either bury the day’s workout under layers of navigation or flood the home screen with metrics, so users lose the thread of a plan within the first week and stop opening the app.',
+    objective:
+      'Design a home screen that answers today’s workout immediately, keeps progress visible without overwhelming, and makes plans feel like a course to finish rather than a list to browse.',
     research: [
-      'Field interviews with farm operators and agronomy experts in rural districts.',
-      'Tested outdoor screen contrast and touch interaction under harsh sunlight.',
-      'Evaluated offline network sync requirements for remote field regions.'
+      'Compared home screen hierarchies across leading workout and activity tracking apps.',
+      'Reviewed where users drop off inside multi-week training programmes.',
+      'Tested legibility of stat components and photographic cards on a dark navy interface.'
     ],
     userInsights: [
-      'Field operators need giant, touch-friendly action cards operable while wearing gloves.',
-      'Offline-first offline status syncing is non-negotiable for rural connectivity.',
-      'Simple color-coded crop health scores provide immediate actionable status updates.'
+      'A visible day counter — Day 1 of 28 — does more for adherence than any streak badge.',
+      'Steps, active minutes, and calories are checked together, so they belong in one glanceable block.',
+      'Photography on workout cards communicates intensity faster than a difficulty label alone.'
     ],
-    designExploration: 'Designed high-contrast high-visibility color systems utilizing earthy olive tones, high-legibility bold typography, and intuitive map layer toggles.',
-    wireframesSummary: 'Iterated interactive map UI layers, offline synchronization banners, and sensor threshold alert rules engines.',
+    designExploration:
+      'Set a deep navy canvas so exercise photography and the cyan-to-violet accent carry the energy. Built a stacked card rhythm — active plan, quick actions, activity ring stats, progress bar, recommended workouts — each block readable in a single glance.',
+    wireframesSummary:
+      'Wireframed the home dashboard with its active plan banner and activity ring, the My Plans library with duration and difficulty tags, the workout category browser, and the four-tab bottom navigation.',
     results: [
-      'Help 300+ commercial farms conserve 28% water usage in trial season.',
-      'Increased crop yield forecasting accuracy by 34%.',
-      '98% user satisfaction rating among field managers.'
+      'A home screen that surfaces the active plan, today’s progress, and the next workout without a single tap.',
+      'Plans presented with week count and difficulty up front, so commitment is clear before starting.',
+      'A consistent card system reused across plans, categories, and recommendations.'
     ],
     learnings: [
-      'Designing for field environments requires prioritizing extreme contrast and touch hit-target sizes above all else.',
-      'Offline state UX is as critical as online state UX.'
+      'Progress framed as a finite programme — day 1 of 28 — motivates more reliably than an open-ended metric.',
+      'On a dark interface, photography needs a consistent overlay treatment or card weight drifts screen to screen.'
     ],
-    heroGradient: 'from-amber-900/40 via-neutral-900 to-black',
-    accentColor: '#f59e0b',
+    heroGradient: 'from-cyan-900/40 via-neutral-900 to-black',
+    accentColor: '#22d3ee',
     galleryImages: [
-      { title: 'Satellite Field Map', caption: 'Normalized difference vegetation index (NDVI) mapping', color: '#78350f' },
-      { title: 'IoT Sensor Node Detail', caption: 'Soil moisture, PH, and ambient temp breakdown', color: '#451a03' },
-      { title: 'Irrigation Scheduler', caption: 'Automated valve control and weather forecasting', color: '#92400e' },
-      { title: 'Yield Analytics Report', caption: 'Seasonal performance comparison dashboard', color: '#b45309' }
-    ]
-  },
-  {
-    slug: 'amoria',
-    number: '06',
-    title: 'AMORIA',
-    subtitle: 'Luxury Olfactory E-Commerce & Interactive Fragrance Finder',
-    category: 'Luxury Fragrance Ecommerce',
-    services: ['UX/UI', 'Ecommerce', 'Art Direction', '3D Interaction'],
-    year: '2024',
-    client: 'Amoria Parfums Paris',
-    role: 'Art Director & UI/UX Designer',
-    duration: '4 Months',
-    tools: ['Figma', 'Three.js', 'Framer Motion', 'Shopify Plus'],
-    summary: 'An immersive digital boutique experience bringing scent storytelling to life through interactive olfactory quizzes, 3D bottle customization, and bespoke editorial layouts.',
-    problem: 'Selling luxury niche fragrances online is challenging due to the inability to smell products physically, leading to high cart abandonment rates.',
-    objective: 'Reinvent online fragrance shopping with a mood-based interactive scent finder algorithm, tactile bottle physics, and cinematic soundscapes.',
-    research: [
-      'Interviewed 40 luxury perfume collectors and boutique fragrance buyers.',
-      'Studied sensory translation techniques in digital art and high-fashion editorial web design.',
-      'Tested scent quiz recommendation accuracy against in-person boutique recommendations.'
+      { title: 'Home Dashboard', caption: 'Active plan banner, activity ring, and recommended workouts', color: '#083344' },
+      { title: 'My Plans', caption: 'Muscle & Strength, Gain Muscle, and Get Fit programmes', color: '#0e7490' },
+      { title: 'Workout Categories', caption: 'Lower body, warm-up, and full body exercise browsing', color: '#155e75' },
+      { title: 'Progress Tracking', caption: 'Steps, active minutes, calories, and plan completion', color: '#0891b2' }
     ],
-    userInsights: [
-      'Perfume buyers connect deeply with emotional imagery, note pyramids (top/heart/base), and mood stories.',
-      'Interactive scent profile matching increases checkout confidence by over 60%.',
-      'Minimalist minimalist typography enhances luxury perception.'
-    ],
-    designExploration: 'Architected sophisticated monospaced serif font pairings, dramatic monochromatic photography transitions, and smooth 3D bottle rotation visualizers.',
-    wireframesSummary: 'Wireframed 5-step scent profiling quiz, interactive bottle engraving customization preview, and seamless slide-out cart.',
-    results: [
-      'E-commerce conversion rate surged by 65% post-relaunch.',
-      'Average order value (AOV) grew from $140 to $235.',
-      'Featured on Awwwards Site of the Day & Mindsparkle Mag.'
-    ],
-    learnings: [
-      'Luxury e-commerce demands meticulous typography kerning, generous whitespace, and zero visual clutter.',
-      'Storytelling elevates brand value and transforms transactions into emotional experiences.'
-    ],
-    heroGradient: 'from-rose-900/40 via-neutral-900 to-black',
-    accentColor: '#f43f5e',
-    galleryImages: [
-      { title: 'Interactive Fragrance Finder', caption: 'Scent mood profiling algorithm visualizer', color: '#881337' },
-      { title: 'Product Detail Experience', caption: 'Top, heart, and base note pyramid breakdown', color: '#4c0519' },
-      { title: '3D Bottle Customizer', caption: 'Custom engraving and cap material selector', color: '#9f1239' },
-      { title: 'Editorial Lookbook', caption: 'Cinematic mood gallery and scent pairings', color: '#be123c' }
-    ]
+    behanceUrl: 'https://www.behance.net/gallery/222174855/Flex-Track-Fitness-Application-User-Interface-Design',
+    showcaseImage: '/flextrack.png',
+    bannerImage: '/flextrack.png'
   }
 ];
 

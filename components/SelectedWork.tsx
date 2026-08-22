@@ -4,6 +4,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { FEATURED_PROJECTS, Project } from '@/data/projects';
+import { SOCIAL_LINKS } from '@/data/social';
+import Magnetic from './Magnetic';
+
+const BEHANCE_PROFILE =
+  SOCIAL_LINKS.find((social) => social.id === 'behance')?.href ??
+  'https://www.behance.net/jesnakelizabe';
 
 export default function SelectedWork() {
   return (
@@ -29,6 +35,25 @@ export default function SelectedWork() {
           {FEATURED_PROJECTS.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
+        </div>
+
+        {/* Full Archive Link */}
+        <div className="mt-20 flex flex-col items-center gap-4 text-center">
+          <p className="text-sm text-neutral-400 font-light max-w-md">
+            More case studies, explorations, and visual work live on Behance.
+          </p>
+          <Magnetic>
+            <a
+              href={BEHANCE_PROFILE}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="VIEW BEHANCE ↗"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-colors shadow-xl group"
+            >
+              <span>View Full Portfolio on Behance</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+          </Magnetic>
         </div>
       </div>
     </section>
