@@ -33,9 +33,10 @@ export const metadata: Metadata = {
     locale: 'en_US',
   },
   twitter: {
-    // The banner comes from app/opengraph-image.png (file-based metadata), which
-    // X falls back to when there is no twitter-image, so the card can go wide.
-    card: 'summary_large_image',
+    // The share image is app/opengraph-image.png (file-based metadata): a small
+    // square logo, so keep the compact card — summary_large_image would stretch
+    // it back into a banner.
+    card: 'summary',
     title,
     description,
   },
