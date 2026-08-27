@@ -71,8 +71,13 @@ function ProjectCard({ project }: { project: Project }) {
     setMousePos({ x: x * 0.1, y: y * 0.1 });
   };
 
-  const targetUrl = project.behanceUrl || `/work/${project.slug}`;
-  const isExternal = Boolean(project.behanceUrl);
+  const targetUrl = project.liveUrl || project.behanceUrl || `/work/${project.slug}`;
+  const isExternal = Boolean(project.liveUrl || project.behanceUrl);
+  const linkLabel = project.liveUrl
+    ? 'Visit Live Site ↗'
+    : project.behanceUrl
+      ? 'View on Behance ↗'
+      : 'Explore Case Study →';
 
   return (
     <a
@@ -85,7 +90,7 @@ function ProjectCard({ project }: { project: Project }) {
         setIsHovered(false);
         setMousePos({ x: 0, y: 0 });
       }}
-      data-cursor="VIEW PROJECT ↗"
+      data-cursor={project.liveUrl ? 'VIEW LIVE SITE ↗' : 'VIEW PROJECT ↗'}
       className="group block relative w-full border-b border-white/10 pb-16 transition-all"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -190,7 +195,7 @@ function ProjectCard({ project }: { project: Project }) {
                 {project.duration} Engagement
               </span>
               <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 flex items-center gap-1">
-                {isExternal ? 'View on Behance ↗' : 'Explore Case Study →'}
+                {linkLabel}
               </span>
             </div>
           </motion.div>

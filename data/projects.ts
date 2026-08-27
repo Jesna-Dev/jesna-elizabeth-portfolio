@@ -23,6 +23,8 @@ export interface Project {
   accentColor: string;
   galleryImages: { title: string; caption: string; color: string }[];
   behanceUrl?: string;
+  /** Shipped site. Takes precedence over behanceUrl as the card's destination. */
+  liveUrl?: string;
   /** Shown on the Selected Work card. Falls back to a procedural mockup. */
   showcaseImage?: string;
   /** Full-width visual at the top of the case study page. */
@@ -122,52 +124,57 @@ export const FEATURED_PROJECTS: Project[] = [
     bannerImage: '/paw.png'
   },
   {
-    slug: 'furniture-store',
+    slug: 'anamtha-agri',
     number: '02',
-    title: 'LIVING & SURFACE E-COMMERCE',
-    subtitle: 'UI/UX Case Study — Modern Furniture & Surface Tiles Shopping Experience',
-    category: 'E-Commerce & Interior Design',
-    services: ['UX/UI Design', 'Design Systems', 'Mobile-First UI'],
-    year: '2026',
-    client: 'Living & Surface Co.',
-    role: 'UI/UX Designer',
-    duration: '3 Weeks',
-    tools: ['Figma', 'Photoshop', 'React', 'Tailwind CSS'],
-    summary: 'A modern e-commerce experience for furniture and tiles that blends elegance, functionality, and seamless shopping across desktop and mobile-first touchpoints.',
-    problem: 'Customers struggled to navigate fragmented furniture and surface catalogs, making it difficult to preview material collections (Marble, Stone, Wood, Green Look) alongside curated room setups.',
-    objective: 'Create a dark, luxury e-commerce interface showcasing Pure Luxury Flow furniture collections, mobile-first category navigation, and interactive Tiles Collection selectors.',
+    title: 'ANAMTHA AGRI',
+    subtitle: 'Live Web Experience — Sustainable Agriculture Inputs & Product Catalog',
+    category: 'Agriculture & Sustainability',
+    services: ['UI/UX Design', 'Web Design', 'Frontend Development'],
+    year: '2024',
+    client: 'Anamtha Technologies',
+    role: 'UX/UI Designer & Frontend Developer',
+    duration: '3 Months',
+    tools: ['Figma', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+    summary:
+      'A live marketing site for a sustainable farming inputs company, built on a deep forest palette and full-bleed product photography that treats fertiliser granules as the hero image rather than hiding them behind stock farm imagery.',
+    problem:
+      'Agricultural input suppliers usually present as commodity catalogs — dense spec sheets and generic field photography — which gives farmers no way to judge product quality or company credibility before making contact.',
+    objective:
+      'Build a site that communicates scientific rigour and environmental care in the same breath, keeps the product catalog and brochure one click away, and works as a working sales channel rather than a brochure page.',
     research: [
-      'Analyzed user flows across mobile and desktop e-commerce platforms.',
-      'Identified friction points in multi-category browsing (Furniture vs. Bathroom vs. Tiles).',
-      'Tested high-contrast dark theme legibility and product card hierarchy.'
+      'Reviewed agri-input and agritech company sites for how they balance technical detail against trust building.',
+      'Studied macro product photography as a substitute for generic farmland imagery.',
+      'Tested legibility of light type across a dark green gradient at desktop and mobile widths.'
     ],
     userInsights: [
-      'Users demand instant visual feedback when switching material collections (Marble Look, Stone Look, Wood Look, Green Look).',
-      'Mobile-first category grids (Curated Experience, Easy Navigation, Smart Shopping) double mobile conversion rates.',
-      'Minimalist typography and dark luxury presentation elevate brand positioning.'
+      'Farmers and distributors want the catalog and a downloadable brochure immediately — not after a contact form.',
+      'Close-up product photography signals quality more convincingly than field-scale stock imagery.',
+      'A direct messaging channel matters more than an enquiry form for buyers in the field.'
     ],
-    designExploration: 'Explored sleek dark interface tokens, gold accent typography, and responsive multi-device presentation mockups (Laptop + Smartphone + Tile Cards).',
-    wireframesSummary: 'Followed a 5-step process: Discover → Define → Design → Test → Deliver, refining Figma auto-layout components and Photoshop visual mockups.',
+    designExploration:
+      'Set a deep forest gradient as the base so the green granule photography reads as the single source of colour. Paired a heavy condensed display face for the headline against light body copy, with a pill navigation rail floating above the hero.',
+    wireframesSummary:
+      'Wireframed the announcement bar, the floating navigation with its brochure download, the split hero (supporting copy left, headline and dual call to action right), the catalog and care sections, and the persistent WhatsApp contact.',
     results: [
-      'Increased mobile shopping path completion rate by 42%.',
-      'Featured on Behance UI/UX Gallery as a benchmark luxury e-commerce study.',
-      'Optimized product search to cart checkout flow.'
+      'Shipped and live, serving as the company’s primary product and credibility channel.',
+      'Catalog and brochure both reachable from the first screen, without a form in the way.',
+      'A persistent WhatsApp channel that matches how buyers actually get in touch.'
     ],
     learnings: [
-      'Combining desktop immersive hero flows with mobile-first category shortcuts delivers a cohesive cross-device experience.',
-      'Detailed tile material previews (Marble, Stone, Wood, Green) build buyer confidence.'
+      'Committing to one deep base colour lets a single product photograph carry an entire hero without extra decoration.',
+      'Designing and building the same site keeps motion and layout decisions honest — nothing was specified that could not ship.'
     ],
-    heroGradient: 'from-amber-950/50 via-neutral-900 to-black',
-    accentColor: '#d97706',
+    heroGradient: 'from-green-950/60 via-neutral-900 to-black',
+    accentColor: '#16a34a',
     galleryImages: [
-      { title: 'Pure Luxury Flow Desktop', caption: 'Immersive laptop hero layout with furniture highlights', color: '#1c1917' },
-      { title: 'Mobile-First Experience', caption: 'Smartphone app preview with quick category navigation', color: '#451a03' },
-      { title: 'Tiles Collection Selector', caption: 'Marble Look, Stone Look, Wood Look, and Green Look cards', color: '#78350f' },
-      { title: 'Curated Categories', caption: 'Faucets, Bathroom, Furniture, and Tiles navigation grid', color: '#92400e' }
+      { title: 'Grow Naturally Hero', caption: 'Split hero with product macro photography and dual call to action', color: '#052e16' },
+      { title: 'Floating Navigation', caption: 'Pill nav rail with inline brochure download', color: '#14532d' },
+      { title: 'Product Catalog', caption: 'Natural farming inputs organised by crop application', color: '#166534' },
+      { title: 'Process & Care', caption: 'Scientific research and crop care presented in sequence', color: '#15803d' }
     ],
-    behanceUrl: 'https://www.behance.net/gallery/253618375/Furniture-Store-UIUX-by-Jesna-Elizabeth-Jolly',
-    showcaseImage: '/furniture-store.png',
-    bannerImage: '/furniture-store-banner.png'
+    liveUrl: 'https://anamtha-agri.vercel.app/',
+    showcaseImage: '/anamtha-agri.png',
+    bannerImage: '/anamtha-agri.png'
   },
   {
     slug: 'botaniq',
@@ -272,8 +279,8 @@ export const FEATURED_PROJECTS: Project[] = [
       { title: 'Share My Imagination', caption: 'Share sheet for sending results onward', color: '#6d28d9' }
     ],
     behanceUrl: 'https://www.behance.net/gallery/238495795/Visora',
-    showcaseImage: '/Visora.png',
-    bannerImage: '/Visora.png'
+    showcaseImage: '/visora-banner.png',
+    bannerImage: '/visora-banner.png'
   },
   {
     slug: 'flex-track',
@@ -327,6 +334,59 @@ export const FEATURED_PROJECTS: Project[] = [
     behanceUrl: 'https://www.behance.net/gallery/222174855/Flex-Track-Fitness-Application-User-Interface-Design',
     showcaseImage: '/flextrack.png',
     bannerImage: '/flextrack.png'
+  },
+  {
+    slug: 'jollys-pineapple',
+    number: '06',
+    title: 'JOLLY’S PINEAPPLE',
+    subtitle: 'Live Web Experience — Kerala Pineapple Growers & Export Brand',
+    category: 'Agri Brand & Export',
+    services: ['UI/UX Design', 'Web Design', 'Frontend Development'],
+    year: '2026',
+    client: 'Jolly’s Pineapple',
+    role: 'UX/UI Designer & Frontend Developer',
+    duration: '2 Weeks',
+    tools: ['Figma', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+    summary:
+      'A live brand site for a pineapple grower and exporter out of Vazhakulam, Kerala, built on a bright white ground where the fruit itself — shot clean and centred — is the only ornament the page needs.',
+    problem:
+      'Produce exporters are usually invisible online or represented by a listing page, so buyers have no way to judge provenance, variety, or scale before reaching out — and the produce itself never gets to make its case.',
+    objective:
+      'Give the business a site that establishes origin and credibility in the first screen, lets buyers browse varieties by name, and routes every enquiry into the channel the business actually answers.',
+    research: [
+      'Reviewed how produce exporters and agricultural brands present provenance and scale online.',
+      'Studied variety-led browsing patterns, where the product name carries the navigation.',
+      'Tested green-on-white contrast for the display headline and the smaller tracked labels.'
+    ],
+    userInsights: [
+      'Buyers look for the growing region before anything else — Vazhakulam is the credential.',
+      'Varieties are the vocabulary of the trade, so they deserve to be the browsing axis rather than a filter.',
+      'WhatsApp is the working channel for this market; a contact form would be a dead end.'
+    ],
+    designExploration:
+      'Set a near-white ground so the pineapple photography supplies the only saturation, with deep forest green for type and a single bright green accent. Ran the variety name as oversized display type behind the fruit, turning the carousel into the page’s main visual event.',
+    wireframesSummary:
+      'Wireframed the header with its persistent WhatsApp action, the origin line above the headline, the variety carousel with the fruit overlapping its own name, and the about, services, gallery, and contact sections below.',
+    results: [
+      'Shipped and live as the brand’s own presence rather than a third-party listing.',
+      'Variety carousel that names and shows each cultivar in a single composition.',
+      'Every call to action routed to WhatsApp, matching how the business already sells.'
+    ],
+    learnings: [
+      'Oversized type behind a cut-out subject creates depth without any additional layout machinery.',
+      'When the product photographs well, the strongest design decision is to leave the space around it empty.'
+    ],
+    heroGradient: 'from-lime-900/40 via-neutral-900 to-black',
+    accentColor: '#2f9e44',
+    galleryImages: [
+      { title: 'Origin Hero', caption: 'Vazhakulam credential line above the display headline', color: '#1a2e05' },
+      { title: 'Variety Carousel', caption: 'Mauritius and other cultivars named in oversized type', color: '#365314' },
+      { title: 'Services & Scale', caption: 'Growing, sourcing, and export capability', color: '#4d7c0f' },
+      { title: 'Gallery & Contact', caption: 'Farm gallery with the persistent WhatsApp channel', color: '#65a30d' }
+    ],
+    liveUrl: 'https://jollys-pineapple-agency.vercel.app/',
+    showcaseImage: '/jollys-pineapple.png',
+    bannerImage: '/jollys-pineapple.png'
   }
 ];
 

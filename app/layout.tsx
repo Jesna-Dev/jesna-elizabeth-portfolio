@@ -33,7 +33,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
   },
   twitter: {
-    card: 'summary_large_image',
+    // No share image, so previews stay compact rather than reserving a banner slot.
+    card: 'summary',
     title,
     description,
   },
