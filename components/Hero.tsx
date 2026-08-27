@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const TITLES = [
@@ -64,25 +63,7 @@ export default function Hero() {
       />
 
       <div className="my-auto z-10 w-full max-w-6xl text-center flex flex-col items-center justify-center">
-        {/* Small Logo Mark */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="mb-8 relative"
-        >
-          <div className="relative w-12 h-12">
-            <Image
-              src="/ek-logo-mark.png"
-              alt="EK Logo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          {/* Subtle glow behind logo */}
-          <div className="absolute inset-0 w-12 h-12 rounded-full bg-white/5 blur-xl -z-10" />
-        </motion.div>
+
 
         {/* Editorial Typewriter Identity Headline */}
         <div className="min-h-[140px] sm:min-h-[180px] md:min-h-[220px] flex items-center justify-center px-4 w-full overflow-hidden">
