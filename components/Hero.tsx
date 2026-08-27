@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const TITLES = [
   'Jesna Elizabeth Jolly',
@@ -22,22 +23,18 @@ export default function Hero() {
     let timeout: NodeJS.Timeout;
 
     if (!isDeleting && displayText.length < currentTitle.length) {
-      // Typing phase: 70-100ms per character
       timeout = setTimeout(() => {
         setDisplayText(currentTitle.slice(0, displayText.length + 1));
       }, 85);
     } else if (!isDeleting && displayText.length === currentTitle.length) {
-      // Pause briefly after text completes: 1.8 seconds
       timeout = setTimeout(() => {
         setIsDeleting(true);
       }, 1800);
     } else if (isDeleting && displayText.length > 0) {
-      // Deleting phase: 45ms per character
       timeout = setTimeout(() => {
         setDisplayText(currentTitle.slice(0, displayText.length - 1));
       }, 45);
     } else if (isDeleting && displayText.length === 0) {
-      // Transition phase to next title: 400ms delay
       setIsDeleting(false);
       setTextIndex((prev) => (prev + 1) % TITLES.length);
     }
@@ -67,6 +64,26 @@ export default function Hero() {
       />
 
       <div className="my-auto z-10 w-full max-w-6xl text-center flex flex-col items-center justify-center">
+        {/* Small Logo Mark */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="mb-8 relative"
+        >
+          <div className="relative w-12 h-12">
+            <Image
+              src="/ek-logo-mark.png"
+              alt="EK Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          {/* Subtle glow behind logo */}
+          <div className="absolute inset-0 w-12 h-12 rounded-full bg-white/5 blur-xl -z-10" />
+        </motion.div>
+
         {/* Editorial Typewriter Identity Headline */}
         <div className="min-h-[140px] sm:min-h-[180px] md:min-h-[220px] flex items-center justify-center px-4 w-full overflow-hidden">
           <motion.h1
