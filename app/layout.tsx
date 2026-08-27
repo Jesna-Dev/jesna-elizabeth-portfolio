@@ -33,9 +33,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
   },
   twitter: {
-    // The share image is app/opengraph-image.png (file-based metadata): a small
-    // square logo, so keep the compact card — summary_large_image would stretch
-    // it back into a banner.
+    // No share image at all: any og:image gets rendered as a large block by
+    // WhatsApp, so the card is deliberately text-only.
     card: 'summary',
     title,
     description,
