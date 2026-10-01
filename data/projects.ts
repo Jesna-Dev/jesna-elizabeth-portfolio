@@ -71,57 +71,57 @@ export interface Testimonial {
 
 export const FEATURED_PROJECTS: Project[] = [
   {
-    slug: 'paw',
+    slug: 'smikteck',
     number: '01',
-    title: 'PAWS',
-    subtitle: 'Landing Page — Pet Grooming & Care Shop in the UAE',
-    category: 'Pet Care & Services',
-    services: ['UI/UX Design', 'Landing Page', 'Visual Identity'],
-    year: '2025',
-    client: 'Paws Pet Care',
+    title: 'SMIKTECK',
+    subtitle: 'Website Design — Technology Solutions & Software Company',
+    category: 'Technology & Software',
+    services: ['UI/UX Design', 'Web Design', 'Visual Direction'],
+    year: '2026',
+    client: 'Smikteck',
     role: 'UI/UX Designer',
     duration: '2 Weeks',
     tools: ['Figma', 'Photoshop'],
     summary:
-      'A warm, high-energy landing page for a UAE pet grooming centre, built on a single saturated orange field, editorial serif type, and cut-out pet photography that carries the personality of the shop.',
+      'A dark, atmospheric website for a technology solutions company, built on a deep navy field, a glowing dot-grid sphere, and a condensed display headline that frames business and software as one offer.',
     problem:
-      'Local grooming businesses usually live on generic booking templates or social profiles alone, so nothing on screen communicates warmth, trust, or what the service actually involves before a customer calls.',
+      'Tech service companies tend to look interchangeable online — stock gradients, vague claims, and crowded hero sections that never make clear who the company helps or what it actually builds.',
     objective:
-      'Design a landing page that reads as friendly and premium at once, puts booking within immediate reach, and lets a first-time visitor understand the services and see real grooming results without hunting.',
+      'Design a site that feels technical and premium in the first screen, states the offer in plain language, and gives business and software clients an equally clear route into services, past work, and contact.',
     research: [
-      'Reviewed pet grooming and veterinary sites across the UAE for tone, booking flow, and trust signals.',
-      'Studied how cut-out photography behaves against flat single-colour backgrounds.',
-      'Tested white-on-orange contrast across headline, body, and button states.'
+      'Reviewed technology consultancies and software studios for tone, hero structure, and how they present services.',
+      'Studied dark-mode interfaces for depth, glow, and texture without losing legibility.',
+      'Tested light-on-navy contrast across the display headline, body copy, and small navigation labels.'
     ],
     userInsights: [
-      'Pet owners look for the animal first — photography sets the emotional tone before any copy is read.',
-      'Booking and contacting are two different intents, so both deserve a visible action rather than one buried menu.',
-      'A short, plain-language promise reassures faster than a list of service specifications.'
+      'Prospective clients decide in seconds whether a company “gets” technology — the visual atmosphere does that work before the copy.',
+      'Business owners and technical buyers arrive with different questions, so both audiences need to see themselves named up front.',
+      'A short, reassuring promise lands better than a list of technologies and acronyms.'
     ],
     designExploration:
-      'Committed to one saturated orange as the whole brand field, with white reserved for type and actions so the palette never competes with the pet photography. Paired a high-contrast serif headline with a rounded paw logo mark and soft paw motifs used as background texture.',
+      'Set the whole page on a deep navy-to-teal field with a softly lit dot-grid sphere as the hero’s focal point, and reserved a single cyan accent for the wordmark and interactive details. Paired a tall condensed headline with floating cursor tags — Business and Software — that hint at collaboration and keep the hero feeling alive.',
     wireframesSummary:
-      'Wireframed the hero composition and its dual call to action, the five-item navigation rail (Home, Contact, About, Service, Gallery), the service cards, and the grooming gallery grid.',
+      'Wireframed the hero composition with its centred headline and floating tags, the six-item navigation (Home, Services, Works, About, Careers, Contact) with a services dropdown, the account and menu controls, and the service and work sections below.',
     results: [
-      'A single-colour brand field that stays recognisable across every section of the page.',
-      'Booking and contact placed side by side in the hero, so neither intent is a dead end.',
-      'Cut-out pet photography carrying the warmth that stock grooming imagery usually flattens.'
+      'A distinctive dark identity that separates the brand from template-driven competitors.',
+      'Business and software audiences both acknowledged in the very first screen.',
+      'A clear navigation structure that leads straight to services, work, careers, and contact.'
     ],
     learnings: [
-      'One committed brand colour can do the work of an entire palette when photography supplies the variation.',
-      'A serif headline against a playful subject keeps a friendly brand from reading as childish.'
+      'Texture and light can carry a dark interface — a single glow does more than a full gradient palette.',
+      'Small motion cues like floating tags make a static hero feel interactive without adding complexity.'
     ],
-    heroGradient: 'from-orange-900/40 via-neutral-900 to-black',
-    accentColor: '#f03c12',
+    heroGradient: 'from-sky-900/40 via-neutral-900 to-black',
+    accentColor: '#1fb6e6',
     galleryImages: [
-      { title: 'Hero Composition', caption: 'Serif headline, dual call to action, and cut-out pet photography', color: '#7c2d12' },
-      { title: 'Navigation & Brand Mark', caption: 'Paw logo mark with the five-item top rail', color: '#9a3412' },
-      { title: 'Service Cards', caption: 'Grooming, washing, and care services at a glance', color: '#c2410c' },
-      { title: 'Gallery Grid', caption: 'Before and after grooming results', color: '#ea580c' }
+      { title: 'Hero Composition', caption: 'Condensed headline over the glowing dot-grid sphere', color: '#0c1a2e' },
+      { title: 'Navigation & Wordmark', caption: 'Cyan-accented wordmark with the six-item top rail', color: '#0f2a44' },
+      { title: 'Floating Tags', caption: 'Business and Software cursor tags framing the offer', color: '#134e6f' },
+      { title: 'Services & Work', caption: 'Service offering and selected work below the fold', color: '#0e7490' }
     ],
-    behanceUrl: 'https://www.behance.net/gallery/222469221/Paw-Landing-page-for-pet-care-shop',
-    showcaseImage: '/paw.png',
-    bannerImage: '/paw.png'
+    behanceUrl: 'https://www.behance.net/gallery/256495663/Smikteck',
+    showcaseImage: '/smikteck.png',
+    bannerImage: '/smikteck.png'
   },
   {
     slug: 'anamtha-agri',

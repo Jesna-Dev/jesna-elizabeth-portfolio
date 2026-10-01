@@ -19,7 +19,7 @@ export default function SelectedWork() {
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 block mb-3">
-              // Selected Work (2024 - 2026)
+              // Selected Work 
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white uppercase">
               Selected Work
