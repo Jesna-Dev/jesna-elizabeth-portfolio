@@ -38,5 +38,19 @@ export const SOCIAL_LINKS: SocialLink[] = [
   }
 ];
 
+export const GITHUB_LINK: SocialLink = {
+  id: 'github',
+  label: 'GitHub',
+  href: 'https://github.com/Jesna-Dev',
+  glyph: 'gh'
+};
+
+/** The header swaps Instagram for GitHub; the footer and contact keep SOCIAL_LINKS. */
+export const HEADER_SOCIAL_LINKS: SocialLink[] = [
+  ...SOCIAL_LINKS.filter((social) => social.id !== 'instagram' && social.id !== 'email'),
+  GITHUB_LINK,
+  ...SOCIAL_LINKS.filter((social) => social.id === 'email')
+];
+
 /** mailto links must not open in a new tab. */
 export const isExternalSocial = (href: string) => href.startsWith('http');

@@ -4,9 +4,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowUpRight, Download, Menu, X } from 'lucide-react';
 import Magnetic from './Magnetic';
-import { SOCIAL_LINKS, isExternalSocial } from '@/data/social';
+import { HEADER_SOCIAL_LINKS, RESUME_URL, isExternalSocial } from '@/data/social';
+
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+    <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+  </svg>
+);
 
 const NAV_LINKS = [
   { label: 'Work', href: '#work' },
@@ -61,7 +67,7 @@ export default function Navbar() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-3">
-              {SOCIAL_LINKS.map((social) => (
+              {HEADER_SOCIAL_LINKS.map((social) => (
                 <Magnetic key={social.id}>
                   <a
                     href={social.href}
@@ -71,11 +77,23 @@ export default function Navbar() {
                     aria-label={social.label}
                     className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs text-neutral-300 hover:bg-white/15 hover:text-white transition-all"
                   >
-                    {social.glyph}
+                    {social.id === 'github' ? <GithubIcon className="w-3.5 h-3.5" /> : social.glyph}
                   </a>
                 </Magnetic>
               ))}
             </div>
+
+            {/* Resume Download */}
+            <Magnetic>
+              <a
+                href={RESUME_URL}
+                download
+                className="inline-flex items-center gap-1.5 pl-3.5 pr-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-neutral-200 transition-colors group"
+              >
+                <Download className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+                <span>Resume</span>
+              </a>
+            </Magnetic>
           </nav>
 
           {/* Mobile Menu Toggle Button */}
@@ -112,7 +130,7 @@ export default function Navbar() {
             ))}
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              {SOCIAL_LINKS.map((social) => (
+              {HEADER_SOCIAL_LINKS.map((social) => (
                 <a
                   key={social.id}
                   href={social.href}
@@ -123,12 +141,22 @@ export default function Navbar() {
                   className="flex items-center gap-2 text-xs text-neutral-400 hover:text-white"
                 >
                   <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center font-bold">
-                    {social.glyph}
+                    {social.id === 'github' ? <GithubIcon className="w-3.5 h-3.5" /> : social.glyph}
                   </span>
                   <span>{social.label}</span>
                 </a>
               ))}
             </div>
+
+            <a
+              href={RESUME_URL}
+              download
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download Resume</span>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
