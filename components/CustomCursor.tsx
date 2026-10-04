@@ -48,14 +48,13 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center rounded-full bg-white text-black font-mono text-xs font-semibold uppercase tracking-wider backdrop-blur-sm"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center rounded-full bg-emerald-400 text-black font-mono text-xs font-semibold uppercase tracking-wider backdrop-blur-sm"
       animate={{
         x: position.x - (cursorText ? 44 : isHovered ? 18 : 6),
         y: position.y - (cursorText ? 44 : isHovered ? 18 : 6),
         width: cursorText ? 88 : isHovered ? 36 : 12,
         height: cursorText ? 88 : isHovered ? 36 : 12,
-        opacity: position.x < 0 ? 0 : 1,
-        mixBlendMode: cursorText ? 'normal' : 'difference'
+        opacity: position.x < 0 ? 0 : 1
       }}
       transition={{
         type: 'spring',
