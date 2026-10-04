@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   title,
   description,
   icons: {
-    icon: '/ek-logo.png',
-    shortcut: '/ek-logo.png',
-    apple: '/ek-logo.png',
+    icon: '/ex-logo.png',
+    shortcut: '/ex-logo.png',
+    apple: '/ex-logo.png',
   },
   openGraph: {
     type: 'website',

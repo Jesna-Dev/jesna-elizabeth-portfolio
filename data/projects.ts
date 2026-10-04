@@ -230,57 +230,57 @@ export const FEATURED_PROJECTS: Project[] = [
     bannerImage: '/Botaniq-HOME.png'
   },
   {
-    slug: 'visora',
+    slug: 'awabakal',
     number: '04',
-    title: 'VISORA',
-    subtitle: 'AI Image Generation App — Where Imagination Meets Intelligence',
-    category: 'AI Product & Mobile App',
-    services: ['UI/UX Design', 'Mobile UI', 'AI Product Design'],
+    title: 'AWABAKAL',
+    subtitle: 'A Digital Journey Through Culture & Country',
+    category: 'Website & Cultural Design',
+    services: ['UI/UX Design', 'Web Design', 'Brand Storytelling'],
     year: '2025',
-    client: 'Visora',
+    client: 'Awabakal',
     role: 'UI/UX Designer',
     duration: '3 Weeks',
     tools: ['Figma', 'Photoshop'],
     summary:
-      'A dark-themed mobile app for text-to-image generation, built around a single clear loop: write a prompt, choose a style, set the ratio, generate — then refine or share the result.',
+      'Reimagining Indigenous heritage through digital design — a warm, story-led website where Awabakal artwork, photography, and community programs sit at the centre of the experience.',
     problem:
-      'AI image tools tend to bury their controls behind jargon and dense settings, so first-time users are unsure what to type, what the style options actually do, or how to improve a result they do not like.',
+      'Community and cultural organisations often have rich stories but websites that feel generic, leaving the identity, art, and values of the people behind them buried under standard templates.',
     objective:
-      'Design a mobile generation flow where every control is visible and self-explanatory, styles are shown rather than named, and refining a result is as easy as making one.',
+      'Design a respectful, welcoming digital home that lets Indigenous artwork and real community imagery lead, while keeping services, resources, and enquiries easy to reach.',
     research: [
-      'Compared prompt-entry and style-selection patterns across existing AI image generators.',
-      'Reviewed where users stall in the generate loop — prompt writing, style choice, and post-result refinement.',
-      'Tested legibility of a dark interface against full-colour generated imagery.'
+      'Reviewed community and education websites for how they balance storytelling with practical information.',
+      'Studied the colour and pattern language of Indigenous artwork to inform the visual direction.',
+      'Tested text legibility over full-bleed photography and layered artwork.'
     ],
     userInsights: [
-      'Visual style swatches communicate far faster than style names on their own.',
-      'Users expect to adjust and regenerate without losing the prompt they already wrote.',
-      'Sharing is part of the creative loop, not an afterthought bolted onto the end.'
+      'Authentic photography and artwork build trust faster than copy alone.',
+      'Visitors need clear paths to services, resources, and contact without losing the cultural story.',
+      'A calm, uncluttered hero lets a single message land before the user scrolls.'
     ],
     designExploration:
-      'Built a dark interface so generated imagery carries the colour, with a violet accent reserved for the primary generate action. Styles are presented as an image grid — Realistic, 3D, Artistic, Illustration, Minimalism, Cartoon, Fantasy, Anime, Street Art, Holographic — each previewing its own look.',
+      'Built a hero where flowing, layered artwork in deep purple, coral, and ochre wraps around a joyful portrait, with a short headline and a single call to action. A slim navigation rail and a "Next" program preview keep the page moving without clutter.',
     wireframesSummary:
-      'Wireframed the prompt and upload entry point, the style grid, the aspect ratio selector, the result view with enhance-prompt and regenerate controls, and the share sheet.',
+      'Wireframed the navigation rail, the hero composition with category tag and call to action, the featured program carousel, and the section flow for services, resources, and enquiries.',
     results: [
-      'A single-screen generation flow: prompt, style, and ratio all reachable without navigating away.',
-      'Style selection shown as previews rather than labels, so the choice is made visually.',
-      'Result screen keeps the original prompt in place, making regeneration and refinement one tap.'
+      'A culturally grounded visual identity carried through colour, pattern, and imagery.',
+      'A hero that communicates purpose in one headline and one action.',
+      'Clear navigation to services, resources, events, and contact from the first screen.'
     ],
     learnings: [
-      'For generative tools, showing the output of an option beats describing it — the style grid does more work than any label could.',
-      'A dark canvas lets vivid generated imagery lead without the interface competing for attention.'
+      'Letting artwork frame the photography creates depth while keeping the cultural identity visible on every screen.',
+      'Restraint in copy and controls gives heritage content the space it deserves.'
     ],
-    heroGradient: 'from-violet-900/40 via-neutral-900 to-black',
-    accentColor: '#8b5cf6',
+    heroGradient: 'from-fuchsia-950/40 via-neutral-900 to-black',
+    accentColor: '#9b2f6b',
     galleryImages: [
-      { title: 'Prompt & Style Selection', caption: 'Prompt entry, image upload, and the visual style grid', color: '#2e1065' },
-      { title: 'Aspect Ratio & Generate', caption: 'Ratio presets with the primary generate action', color: '#4c1d95' },
-      { title: 'Result & Enhance Prompt', caption: 'Generated output with variations and regenerate controls', color: '#5b21b6' },
-      { title: 'Share My Imagination', caption: 'Share sheet for sending results onward', color: '#6d28d9' }
+      { title: 'Hero & Navigation', caption: 'Artwork-led landing with slim navigation rail', color: '#3b0a45' },
+      { title: 'Program Carousel', caption: 'Next-up preview for community programs', color: '#5b1459' },
+      { title: 'Colour & Pattern', caption: 'Purple, coral, and ochre drawn from Indigenous artwork', color: '#8a2a5c' },
+      { title: 'Calls to Action', caption: 'Contact and enquiry paths kept in reach', color: '#b4496a' }
     ],
-    behanceUrl: 'https://www.behance.net/gallery/238495795/Visora',
-    showcaseImage: '/visora-banner.png',
-    bannerImage: '/visora-banner.png'
+    behanceUrl: 'https://www.behance.net/gallery/256594531/Awabakal-A-Digital-Journey-Through-Culture-Country',
+    showcaseImage: '/awabakal-banner.png',
+    bannerImage: '/awabakal-banner.png'
   },
   {
     slug: 'flex-track',

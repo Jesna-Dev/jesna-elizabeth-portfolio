@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <div className="flex items-center gap-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/ek-logo.png" alt="EK Logo" className="w-5 h-5 object-contain" />
+            <img src="/ex-logo-mark.png" alt="Elix monogram" className="w-5 h-5 object-contain" />
             <span className="text-white font-bold tracking-wider uppercase">
               JESNA ELIZABETH JOLLY
             </span>
