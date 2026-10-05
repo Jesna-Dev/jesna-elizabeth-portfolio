@@ -52,7 +52,7 @@ const EXPERIENCES: ExperienceItem[] = [
   },
   {
     company: 'Navalt',
-    role: 'Frontend Developer',
+    role: 'UI UX Designer',
     location: 'Kochi, Kerala',
     period: 'Aug 2020 — Jun 2023',
     description:
@@ -76,7 +76,7 @@ export default function Experience() {
           </div>
           <div className="max-w-md space-y-6">
             <p className="text-neutral-400 text-sm md:text-base font-light">
-              Over 5+ years combining 2+ years of UI/UX design with 3+ years of technical frontend development background.
+              UI/UX & Product Designer with 5+ years of experience designing intuitive web and mobile experiences. Skilled in user research, wireframing, prototyping, design systems, responsive design, and frontend development.
             </p>
 
             <Magnetic>
