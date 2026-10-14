@@ -114,7 +114,7 @@ function PlaygroundCard({ item }: { item: PlaygroundItem }) {
             {item.status}
           </span>
         ) : (
-          <span className="text-white group-hover:text-emerald-400 transition-colors">
+          <span className="text-white group-hover:text-[#F12020] transition-colors">
             {item.link ? 'Visit Site ↗' : 'View Demo ↗'}
           </span>
         )}

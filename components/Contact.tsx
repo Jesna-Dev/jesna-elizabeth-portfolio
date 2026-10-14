@@ -55,7 +55,7 @@ export default function Contact() {
         {/* Status Line */}
         <div className="pt-8 border-t border-white/10 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-neutral-400 uppercase tracking-widest">
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#F12020] animate-pulse" />
             Available for freelance & full-time opportunities
           </span>
           <a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors">

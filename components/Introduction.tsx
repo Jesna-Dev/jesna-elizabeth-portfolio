@@ -53,7 +53,7 @@ export default function Introduction() {
   const [activeRole, setActiveRole] = useState<RoleContent>(ROLES[0]);
 
   return (
-    <section className="w-full py-28 md:py-40 px-6 md:px-12 bg-[#0D0D0F] border-t border-white/10 select-none">
+    <section id="about" className="w-full py-28 md:py-40 px-6 md:px-12 bg-[#0D0D0F] border-t border-white/10 select-none">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Column: Role Selector Navigation (approx 30%) */}
         <div className="lg:col-span-4 space-y-8">
@@ -123,7 +123,7 @@ export default function Introduction() {
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   className="space-y-6"
                 >
-                  <span className="inline-block text-xs font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
+                  <span className="inline-block text-xs font-mono uppercase tracking-widest text-[#F12020] bg-[#F12020]/10 border border-[#F12020]/20 px-3 py-1 rounded-full">
                     Audience // {activeRole.label.replace('— ', '')}
                   </span>
 
@@ -152,7 +152,7 @@ export default function Introduction() {
             {/* Panel Bottom Footer & Decorative Element */}
             <div className="z-10 pt-8 mt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#A0A0A5]">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#F12020] animate-pulse" />
                 <span>Interactive Context Note</span>
               </div>
               <span className="text-white/40">Jesna Elizabeth Jolly // 2026</span>

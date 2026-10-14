@@ -48,7 +48,7 @@ export default function Process() {
               className="p-8 rounded-2xl bg-neutral-900/50 border border-white/10 flex flex-col justify-between h-[360px] hover:border-white/30 transition-colors"
             >
               <div>
-                <span className="text-sm font-mono text-emerald-400 block mb-4">
+                <span className="text-sm font-mono text-[#F12020] block mb-4">
                   {step.number} — {step.subtitle}
                 </span>
                 <h3 className="text-3xl font-bold tracking-tight text-white mb-4">

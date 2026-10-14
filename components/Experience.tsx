@@ -70,7 +70,7 @@ export default function Experience() {
             <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 block mb-3">
               // Career Trajectory
             </span>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white uppercase">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white uppercase">
               Employment <br className="hidden sm:block" /> Experience
             </h2>
           </div>
@@ -105,8 +105,8 @@ export default function Experience() {
             >
               {/* Active Pill Badge for Current Roles */}
               {exp.isCurrent && (
-                <div className="absolute top-6 right-6 flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="absolute top-6 right-6 flex items-center gap-2 px-3 py-1 rounded-full bg-[#F12020]/10 border border-[#F12020]/30 text-[#F12020] text-xs font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F12020] animate-pulse" />
                   Active Role
                 </div>
               )}
@@ -127,7 +127,7 @@ export default function Experience() {
                 {/* Right Role & Description */}
                 <div className="lg:col-span-8 space-y-3">
                   <div className="flex flex-wrap items-baseline gap-3">
-                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-emerald-300 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#FF5C5C] transition-colors">
                       {exp.company}
                     </h3>
                     <span className="text-neutral-500 font-mono text-sm">—</span>

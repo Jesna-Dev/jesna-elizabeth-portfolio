@@ -5,13 +5,12 @@ import Introduction from '@/components/Introduction';
 import Marquee from '@/components/Marquee';
 import SelectedWork from '@/components/SelectedWork';
 import Playground from '@/components/Playground';
-import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Process from '@/components/Process';
 import Skills from '@/components/Skills';
-import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import FortuneGame from '@/components/FortuneGame';
 
 export const metadata = {
   title: 'Jesna Elizabeth Jolly — UI/UX Designer & Creative Technologist',
@@ -28,13 +27,12 @@ export default function Home() {
       <Introduction />
       <SelectedWork />
       <Playground />
-      <About />
       <Experience />
       <Process />
       <Skills />
-      <Testimonials />
       <Contact />
       <Footer />
+      <FortuneGame />
     </main>
   );
 }
