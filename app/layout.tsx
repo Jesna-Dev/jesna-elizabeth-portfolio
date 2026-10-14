@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import CustomCursor from '@/components/CustomCursor';
 import LenisProvider from '@/components/LenisProvider';
@@ -53,6 +54,7 @@ export default function RootLayout({
           <CustomCursor />
           {children}
         </LenisProvider>
+        <Analytics />
       </body>
     </html>
   );
