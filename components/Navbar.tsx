@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Download, Menu, X } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
 import Magnetic from './Magnetic';
 import { HEADER_SOCIAL_LINKS, RESUME_URL, isExternalSocial } from '@/data/social';
 
@@ -18,7 +18,8 @@ const NAV_LINKS = [
   { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Resources', href: '#playground', external: true },
+  { label: 'Playground', href: '#playground' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
@@ -32,14 +33,14 @@ export default function Navbar() {
           {/* Left Brand Area */}
           <Magnetic>
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/20 group-hover:border-white/50 transition-colors">
-                <Image
-                  src="/IMG_3730.PNG"
-                  alt="Jesna Elizabeth Jolly Profile Picture"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              {/* "ex" (Elix) mark: transparent PNG, 493x318 */}
+              <Image
+                src="/ex-logo-mark.png"
+                alt="Elix logo"
+                width={34}
+                height={22}
+                className="h-[22px] w-auto group-hover:scale-110 transition-transform"
+              />
               <span className="text-sm font-medium text-[#F5F5F5] tracking-tight group-hover:text-white transition-colors">
                 Jesna Elizabeth Jolly
               </span>
@@ -55,10 +56,7 @@ export default function Navbar() {
                   className="text-xs font-medium text-[#A0A0A5] hover:text-[#F5F5F5] transition-colors relative py-1 flex items-center gap-0.5 group"
                 >
                   <span>{link.label}</span>
-                  {link.external && (
-                    <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-white transition-colors" />
-                  )}
-                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#F12020] transition-all duration-300 group-hover:w-full" />
                 </a>
               </Magnetic>
             ))}
@@ -88,7 +86,7 @@ export default function Navbar() {
               <a
                 href={RESUME_URL}
                 download
-                className="inline-flex items-center gap-1.5 pl-3.5 pr-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-neutral-200 transition-colors group"
+                className="inline-flex items-center gap-1.5 pl-3.5 pr-4 py-1.5 rounded-full bg-[#F12020] text-white text-xs font-semibold hover:bg-[#D41818] transition-colors group"
               >
                 <Download className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
                 <span>Resume</span>
@@ -125,7 +123,6 @@ export default function Navbar() {
                 className="py-2 border-b border-white/5 flex items-center justify-between text-neutral-300 hover:text-white"
               >
                 <span>{link.label}</span>
-                {link.external && <ArrowUpRight className="w-4 h-4 text-neutral-400" />}
               </a>
             ))}
 
@@ -152,7 +149,7 @@ export default function Navbar() {
               href={RESUME_URL}
               download
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 transition-colors"
+              className="mt-2 inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#F12020] text-white text-sm font-semibold hover:bg-[#D41818] transition-colors"
             >
               <Download className="w-4 h-4" />
               <span>Download Resume</span>

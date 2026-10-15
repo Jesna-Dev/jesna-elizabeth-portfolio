@@ -536,3 +536,115 @@ export const TESTIMONIALS: Testimonial[] = [
     company: 'North Creative Studio'
   }
 ];
+
+/** Just the fields a Selected Work card needs. */
+export type ShowcaseProject = Pick<
+  Project,
+  | 'slug'
+  | 'number'
+  | 'title'
+  | 'subtitle'
+  | 'category'
+  | 'heroGradient'
+  | 'accentColor'
+  | 'behanceUrl'
+  | 'liveUrl'
+  | 'showcaseImage'
+>;
+
+/**
+ * Behance projects shown in Selected Work after the featured case studies.
+ * Card-only entries: they link straight to Behance and have no /work page.
+ * Subtitles come from each project's Behance description, or its title where
+ * it has none. Covers are the Behance thumbnails, saved in /public/behance.
+ */
+export const BEHANCE_PROJECTS: ShowcaseProject[] = [
+  {
+    slug: 'furniture-store',
+    number: '07',
+    title: 'FURNITURE STORE',
+    subtitle: 'UI/UX Design — Furniture Store',
+    category: 'E-Commerce & Retail',
+    heroGradient: 'from-amber-950/40 via-neutral-900 to-black',
+    accentColor: '#c08a5b',
+    behanceUrl: 'https://www.behance.net/gallery/253618375/Furniture-Store-UIUX-by-Jesna-Elizabeth-Jolly',
+    showcaseImage: '/behance/furniture-store.jpg',
+  },
+  {
+    slug: 'employees-dashboard',
+    number: '08',
+    title: 'EMPLOYEES DASHBOARD',
+    subtitle: 'Admin dashboard for tracking employees, attendance, leave, projects and announcements',
+    category: 'Dashboard & SaaS',
+    heroGradient: 'from-indigo-950/40 via-neutral-900 to-black',
+    accentColor: '#6366f1',
+    behanceUrl: 'https://www.behance.net/gallery/239842211/EmployeesDashboard',
+    showcaseImage: '/behance/employees-dashboard.jpg',
+  },
+  {
+    slug: 'irctc-redesign',
+    number: '09',
+    title: 'IRCTC REDESIGN',
+    subtitle: 'Redesign of India’s railway booking platform — a cleaner, easier booking flow',
+    category: 'Travel & Redesign',
+    heroGradient: 'from-blue-950/40 via-neutral-900 to-black',
+    accentColor: '#2563eb',
+    behanceUrl: 'https://www.behance.net/gallery/239756881/IRCTC-Redesign',
+    showcaseImage: '/behance/irctc-redesign.jpg',
+  },
+  {
+    slug: 'loome',
+    number: '10',
+    title: 'LOOMÉ',
+    subtitle: 'Fashion e-commerce mobile app designed for a seamless shopping experience',
+    category: 'Fashion Mobile App',
+    heroGradient: 'from-rose-950/40 via-neutral-900 to-black',
+    accentColor: '#e11d48',
+    behanceUrl: 'https://www.behance.net/gallery/239206021/Loom-For-seamless-shopping-experience',
+    showcaseImage: '/behance/loome.jpg',
+  },
+  {
+    slug: 'meeto',
+    number: '11',
+    title: 'MEETO',
+    subtitle: 'A modern social media application',
+    category: 'Social Mobile App',
+    heroGradient: 'from-violet-950/40 via-neutral-900 to-black',
+    accentColor: '#8b5cf6',
+    behanceUrl: 'https://www.behance.net/gallery/239187843/Meeto-is-a-modern-social-media-application',
+    showcaseImage: '/behance/meeto.jpg',
+  },
+  {
+    slug: 'visora',
+    number: '12',
+    title: 'VISORA',
+    subtitle: 'AI image generation app — where imagination meets intelligence',
+    category: 'AI Mobile App',
+    heroGradient: 'from-purple-950/40 via-neutral-900 to-black',
+    accentColor: '#a78bfa',
+    behanceUrl: 'https://www.behance.net/gallery/238495795/Visora',
+    showcaseImage: '/behance/visora.jpg',
+  },
+  {
+    slug: 'paw',
+    number: '13',
+    title: 'PAW',
+    subtitle: 'Landing page for a pet care shop',
+    category: 'Landing Page',
+    heroGradient: 'from-orange-950/40 via-neutral-900 to-black',
+    accentColor: '#f97316',
+    behanceUrl: 'https://www.behance.net/gallery/222469221/Paw-Landing-page-for-pet-care-shop',
+    showcaseImage: '/behance/paw.jpg',
+  },
+  {
+    slug: 'clay-pottery',
+    number: '14',
+    title: 'CLAY POTTERY',
+    subtitle: 'Website landing page design for a clay pottery studio',
+    category: 'Landing Page',
+    heroGradient: 'from-stone-900/50 via-neutral-900 to-black',
+    accentColor: '#b45309',
+    behanceUrl: 'https://www.behance.net/gallery/222176719/Clay-Pottery-Website-Landing-Page-User-Interface-Design',
+    showcaseImage: '/behance/clay-pottery.jpg',
+  },
+];

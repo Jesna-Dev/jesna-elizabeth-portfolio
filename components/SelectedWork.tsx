@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, PanInfo } from 'framer-motion';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
-import { FEATURED_PROJECTS, Project } from '@/data/projects';
+import { BEHANCE_PROJECTS, FEATURED_PROJECTS, ShowcaseProject } from '@/data/projects';
 import { SOCIAL_LINKS } from '@/data/social';
 import Magnetic from './Magnetic';
 
@@ -11,7 +11,9 @@ const BEHANCE_PROFILE =
   SOCIAL_LINKS.find((social) => social.id === 'behance')?.href ??
   'https://www.behance.net/jesnakelizabe';
 
-const COUNT = FEATURED_PROJECTS.length;
+/** Featured case studies first, then the rest of the Behance work. */
+const PROJECTS: ShowcaseProject[] = [...FEATURED_PROJECTS, ...BEHANCE_PROJECTS];
+const COUNT = PROJECTS.length;
 
 /** How long each project stays in front before the strip folds on, in ms. Never pauses. */
 const AUTOPLAY_MS = 3200;
@@ -27,7 +29,7 @@ const VISIBLE_SIDE = 2;
 const CARD_W_MAX = 330;
 const DEFAULT_WIDTH = 1184; // max-w-7xl minus its md:px-12 gutters, before measuring
 
-function projectLink(project: Project) {
+function projectLink(project: ShowcaseProject) {
   const href = project.liveUrl || project.behanceUrl || `/work/${project.slug}`;
   const isExternal = Boolean(project.liveUrl || project.behanceUrl);
   const label = project.liveUrl
@@ -91,7 +93,7 @@ export default function SelectedWork() {
 
   // A card wrapping from the hidden end of one side to the other jumps there
   // instead of sweeping across the front of the strip.
-  const offsets = FEATURED_PROJECTS.map((_, i) => wrappedOffset(i, active));
+  const offsets = PROJECTS.map((_, i) => wrappedOffset(i, active));
   const jumps = offsets.map((offset, i) => {
     const previous = wrappedOffset(i, from);
     return (
@@ -140,7 +142,7 @@ export default function SelectedWork() {
           onPanEnd={handlePanEnd}
           className="relative h-[440px] [perspective:1400px] touch-pan-y"
         >
-          {FEATURED_PROJECTS.map((project, i) => {
+          {PROJECTS.map((project, i) => {
             const offset = offsets[i];
             const isFront = offset === 0;
             return (
@@ -175,7 +177,7 @@ export default function SelectedWork() {
 
         {/* Position dots */}
         <div className="mt-10 flex items-center justify-center gap-3">
-          {FEATURED_PROJECTS.map((project, i) => (
+          {PROJECTS.map((project, i) => (
             <button
               key={project.slug}
               type="button"
@@ -212,7 +214,7 @@ export default function SelectedWork() {
   );
 }
 
-function DeckCard({ project }: { project: Project }) {
+function DeckCard({ project }: { project: ShowcaseProject }) {
   const { href, isExternal, label } = projectLink(project);
 
   // Styled to match the Playground cards: dark panel, accent glow, mono details.
