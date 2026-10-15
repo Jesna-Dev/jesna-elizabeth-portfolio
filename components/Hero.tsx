@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { EMAIL, SOCIAL_LINKS, isExternalSocial } from '@/data/social';
-import { display } from '@/styles/fonts';
 
 const RED = '#F12020';
 
@@ -121,7 +120,7 @@ export default function Hero() {
           <div aria-hidden className="relative">
             {/* Fixed height of four base rows, so every word occupies the same box */}
             <div
-              className={`${display.className} relative h-[3.44em] min-w-[3.8em] text-[22vw] md:text-[12vw] lg:text-[118px] xl:text-[136px] leading-[0.86] tracking-[-0.02em] text-[#F5F5F5]`}
+              className="relative h-[3.44em] min-w-[3.8em] text-[22vw] md:text-[12vw] lg:text-[118px] xl:text-[136px] font-bold leading-[0.86] tracking-tight text-[#F5F5F5]"
             >
               <AnimatePresence mode="wait">
                 <motion.div
