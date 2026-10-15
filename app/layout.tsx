@@ -40,7 +40,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
   },
   twitter: {
-    // Square portrait, so the compact card with a thumbnail fits best.
+    // Small square share image (256px, app/opengraph-image.jpg): under ~300px
+    // WhatsApp shows a compact thumbnail beside the text instead of a large
+    // banner, and LinkedIn does the same below 1200px wide.
     card: 'summary',
     title: shareTitle,
     description: shareDescription,
