@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PLAYGROUND_ITEMS, PlaygroundItem } from '@/data/projects';
-import { Sparkles, Terminal } from 'lucide-react';
+import { GITHUB_LINK } from '@/data/social';
+import { ArrowUpRight, Sparkles, Terminal } from 'lucide-react';
+import Magnetic from './Magnetic';
 
 export default function Playground() {
   return (
@@ -27,6 +29,25 @@ export default function Playground() {
           {PLAYGROUND_ITEMS.map((item) => (
             <PlaygroundCard key={item.id} item={item} />
           ))}
+        </div>
+
+        {/* GitHub link, matching the Behance link under Selected Work */}
+        <div className="mt-20 flex flex-col items-center gap-4 text-center">
+          <p className="text-sm text-neutral-400 font-light max-w-md">
+            More experiments, side projects, and code live on GitHub.
+          </p>
+          <Magnetic>
+            <a
+              href={GITHUB_LINK.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="VIEW GITHUB ↗"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-colors shadow-xl group"
+            >
+              <span>View More Projects on GitHub</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+          </Magnetic>
         </div>
       </div>
     </section>
