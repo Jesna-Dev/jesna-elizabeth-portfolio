@@ -26,7 +26,7 @@ const SIN = Math.sin((FOLD * Math.PI) / 180);
 /** Cards further than this from the centre are hidden. */
 const VISIBLE_SIDE = 2;
 
-const CARD_W_MAX = 330;
+const CARD_W_MAX = 380;
 const DEFAULT_WIDTH = 1184; // max-w-7xl minus its md:px-12 gutters, before measuring
 
 function projectLink(project: ShowcaseProject) {
@@ -140,7 +140,7 @@ export default function SelectedWork() {
         <motion.div
           ref={stripRef}
           onPanEnd={handlePanEnd}
-          className="relative h-[440px] [perspective:1400px] touch-pan-y"
+          className="relative h-[540px] [perspective:1400px] touch-pan-y"
         >
           {PROJECTS.map((project, i) => {
             const offset = offsets[i];
@@ -225,7 +225,7 @@ function DeckCard({ project }: { project: ShowcaseProject }) {
       target={isExternal ? '_blank' : '_self'}
       rel={isExternal ? 'noopener noreferrer' : undefined}
       data-cursor={project.liveUrl ? 'VIEW LIVE SITE ↗' : 'VIEW PROJECT ↗'}
-      className="group relative flex flex-col gap-6 h-[420px] rounded-2xl border border-white/10 bg-neutral-900 p-7 overflow-hidden hover:border-white/30 transition-colors duration-300 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.8)] focus:outline-none focus-visible:border-white/50"
+      className="group relative flex flex-col gap-5 h-[520px] rounded-2xl border border-white/10 bg-neutral-900 p-7 overflow-hidden hover:border-white/30 transition-colors duration-300 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.8)] focus:outline-none focus-visible:border-white/50"
     >
       {/* Ambient accent glow */}
       <div
