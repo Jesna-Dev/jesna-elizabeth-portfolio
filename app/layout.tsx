@@ -8,6 +8,12 @@ const title = 'Jesna Elizabeth Jolly — UI/UX Designer & Creative Technologist'
 const description =
   'Portfolio of Jesna Elizabeth Jolly, a UI/UX Designer, Product Designer, and Creative Technologist based in Kerala, India.';
 
+// What link previews (WhatsApp, LinkedIn, iMessage, X) show. The share image
+// itself is app/opengraph-image.jpg, picked up by Next's file convention.
+const shareTitle = 'Jesna Elizabeth Jolly | UI/UX Designer & Frontend Developer';
+const shareDescription =
+  'Explore my portfolio showcasing UI/UX design and frontend development.';
+
 // Social crawlers need absolute URLs. Set NEXT_PUBLIC_SITE_URL to the live
 // domain; Vercel deployments fall back to their own hostname.
 const siteUrl =
@@ -28,17 +34,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Jesna Elizabeth Jolly',
-    title,
-    description,
+    title: shareTitle,
+    description: shareDescription,
     url: '/',
     locale: 'en_US',
   },
   twitter: {
-    // No share image at all: any og:image gets rendered as a large block by
-    // WhatsApp, so the card is deliberately text-only.
+    // Square portrait, so the compact card with a thumbnail fits best.
     card: 'summary',
-    title,
-    description,
+    title: shareTitle,
+    description: shareDescription,
   },
 };
 
